@@ -230,7 +230,7 @@ export const allMainArticles = [
           ],
           codeTitleImg: "✅1.Importaciones y estado inicial",
           codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fscreen-articulo-loading%2Fss-importacion-estado-inicial.png?alt=media&token=fe130b74-e27c-4506-beac-370c19b0191a",
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fss-importacion-estado-inicial.png?alt=media&token=360ffb5c-ea03-4982-bd8d-4882f20dfb1c",
           balazo: undefined,
         },
         code: undefined,
@@ -311,7 +311,7 @@ export const allMainArticles = [
           codeBreakdown: [],
           codeTitleImg: "Precarga de Medios (useEffect)",
           codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fscreen-articulo-loading%2Fss-precarga-medios-useEffect.png?alt=media&token=1c40944b-6522-44da-8976-4384240c7d6b",
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fss-precarga-medios-useEffect-dos.png?alt=media&token=36cfdfa1-7cfe-4d49-8631-c22fc1ea792e",
         },
         code: undefined,
       },
@@ -348,7 +348,7 @@ export const allMainArticles = [
           codeBreakdown: [],
           codeTitleImg: "🌐 Conditional render 3.1. Video",
           codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fscreen-articulo-loading%2Fss-renderizado-condicional.png?alt=media&token=5b423f27-4234-4c17-aa54-b1f453ab2e57",
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fss-renderizado-condicional-tres.png?alt=media&token=e7cc7c56-5a9b-4dbf-b0f9-861db1f4524d",
         },
         code: undefined,
       },

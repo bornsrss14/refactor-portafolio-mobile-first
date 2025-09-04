@@ -64,10 +64,7 @@ export const DetailedObjectArticle = ({ objectItem }) => {
                     <h3>{section.codeSnippet.codeTitleImg}</h3>
                   )}
                   {section.codeSnippet?.codePreview && (
-                    <div
-                      style={{ width: "100%", height: "7.5rem" }}
-                      className=""
-                    >
+                    <div className="img-container-hundred-porcent">
                       <img
                         src={section.codeSnippet.codePreview}
                         className="img-full-cover"

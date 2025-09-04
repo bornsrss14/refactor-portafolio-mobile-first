@@ -118,7 +118,7 @@ desktop
   overflow: hidden;
   /* extra para móviles */
   text-overflow: ellipsis;
-  word-break: break-word; /* evita desbordes con palabras largas */
+  word-break: break-word; /* evita desbordes con palabras^ largas */
 }
 
 .txt-normal-mobile {
@@ -173,7 +173,7 @@ desktop
   max-width: 95%;
   width: 100%;
   padding: 1rem;
-  margin: 2rem auto;
+  margin: 2rem auto 0rem;
 }
 .hero-article {
   display: grid;
@@ -198,9 +198,18 @@ desktop
   color: rgb(60, 60, 191);
   font-size: 1rem;
 }
+.img-container-hundred-porcent {
+  width: 100%;
+  height: auto;
+}
 .App {
   text-align: center;
 }
+/* .img-container-hundred-porcent {
+desktop
+  width: 100%;
+  height: auto;
+} */
 /* .full-article-container:hover,
 desktop
 .full-article-container-grid:hover {
