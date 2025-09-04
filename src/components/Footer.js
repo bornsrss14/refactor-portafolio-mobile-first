@@ -1,6 +1,7 @@
 import { IconChevronCompactUp } from "@tabler/icons-react";
 import LogoScalable from "../core/LogoScalable";
 import SocialMediaIcons from "./SocialMediaIcons";
+import SecondFooter from "./SecondFooter";
 
 export const Footer = () => {
   const scrollToTop = () => {
@@ -22,20 +23,7 @@ export const Footer = () => {
         <p>Don't forget to contact me</p>
         <p>Hope to hear from you soon.</p>
       </section>
-      <section className="container-social-media flex-row">
-        <div className="flex-row">
-          <LogoScalable
-            imagenImg={
-              "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fpandas-black-white.png?alt=media&token=39f89382-5898-47d9-83ce-72b11a6872ca"
-            }
-            customHeight="30px"
-            customWidth="30px"
-          ></LogoScalable>
-
-          <p> 2025, made by Rosario Fuentes with ♡</p>
-        </div>
-        <SocialMediaIcons />
-      </section>
+      <SecondFooter></SecondFooter>
     </div>
   );
 };

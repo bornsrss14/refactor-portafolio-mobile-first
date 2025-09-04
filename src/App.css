@@ -255,6 +255,73 @@ no es necesario
   font-family: "Playfair Display", serif;
   font-size: 1.6rem;
 }
+.footer-content {
+  margin: 2rem auto;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+.up {
+  width: 100%;
+  min-width: 100%;
+  text-align: center;
+  margin: 0rem auto 1rem;
+  cursor: pointer;
+}
+.message-footer-bye {
+  font-size: 3rem;
+  color: #3c3cbf;
+}
+.message-footer {
+  font-size: 3rem;
+}
+.container-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.7rem;
+}
+.container-social-media {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#main-grid-about {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  background: #fff5d6;
+  background: -webkit-linear-gradient(to right, #ffffff, #fff8e1);
+  background: linear-gradient(to right, #ffffff, #fffbee);
+}
+.item-about {
+  padding: 1rem;
+}
+
+.sec-masonry {
+  overflow: auto;
+  position: relative;
+  scrollbar-width: none; /* para Firefox */
+  -ms-overflow-style: none; /* para Internet Explorer y Edge */
+}
+.sec-masonry ::-webkit-scrollbar {
+  display: none;
+}
+.sec-txt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .App {
   text-align: center;
 }
@@ -877,23 +944,18 @@ desktop
   transform: rotate(-139deg);
 }
 
-.footer-content {
+/* .footer-content {
+desktop
   margin: 2rem auto;
   width: 80%;
   background-color: white;
   position: relative;
-}
-.up {
-  width: 100%;
-  min-width: 100%;
-  text-align: center;
-  margin: 0rem auto 1rem;
-  cursor: pointer;
-}
+} */
+/* 
 .message-footer-bye {
   font-size: 5rem;
   color: #3c3cbf;
-}
+} */
 .containerIcons a:hover {
   color: #3c3cbf;
 }
@@ -901,29 +963,20 @@ desktop
   font-family: "Playfair Display", serif;
   color: white;
 }
-.message-footer {
-  font-size: 5rem;
-}
-
-.container-social-media {
-  width: 100%;
-  margin: 1rem auto;
-  padding: 0.5rem 1rem 1rem;
-  justify-content: space-between;
-}
 
 .containerIcons {
   display: flex;
   gap: 0.7rem;
 }
 
-.container-message {
+/* .container-message {
+desktop
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-}
+} */
 .container-message p {
   font-size: 1.1rem;
 }
@@ -1265,31 +1318,6 @@ desktop
   background-color: #edf3ff;
 }
 
-.item-about {
-  padding: 1rem 2rem;
-}
-
-#main-grid-about {
-  display: grid;
-  padding: 2rem 0;
-  grid-template-columns: 45% 1fr;
-  gap: 1rem;
-  max-width: 80%;
-  height: 100vh;
-  margin: 1rem auto;
-  background: #fff5d6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #ffffff,
-    #fff8e1
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #ffffff,
-    #fffbee
-  ); /* W3C, IE 1C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 /* masonry */
 
 .masonry-grid {
@@ -1312,15 +1340,16 @@ desktop
   height: auto;
 }
 
-.sec-masonry {
+/* .sec-masonry {
+desktop
   overflow: auto;
   position: relative;
-  scrollbar-width: none; /* para Firefox */
-  -ms-overflow-style: none; /* para Internet Explorer y Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .sec-masonry ::-webkit-scrollbar {
   display: none;
-}
+} */
 .paragraph-about-me {
   display: flex;
   flex-direction: column;
@@ -1410,6 +1439,26 @@ desktop
   .font-form-sub {
     font-family: "Playfair Display", serif;
     font-size: 2.3rem;
+  }
+  .container-social-media {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0.5rem 4rem;
+    justify-content: space-between;
+  }
+  #main-grid-about {
+    display: grid;
+    padding: 2rem 0;
+    grid-template-columns: 45% 1fr;
+    gap: 1rem;
+    max-width: 80%;
+    height: 100vh;
+    margin: 1rem auto;
+    background: #fff5d6;
+    background: -webkit-linear-gradient(to right, #ffffff, #fff8e1);
+    background: linear-gradient(to right, #ffffff, #fffbee);
   }
 }
 

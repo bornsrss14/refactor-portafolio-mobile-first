@@ -8,6 +8,7 @@ import ContactForm from "./pages/ContactForm";
 import AboutMe from "./pages/AboutMe";
 import UiComponents from "./pages/UiComponents";
 import DetailedArticle from "./pages/DetailedArticle";
+import SecondFooter from "./components/SecondFooter";
 
 function App() {
   return (

@@ -4,6 +4,7 @@ import { allMainArticles } from "../utils/AllArticles";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ArticleItemGrid from "../components/ArticleItemGrid";
+import SecondFooter from "../components/SecondFooter";
 
 export const Articles = () => {
   const [articles] = useState(allMainArticles);
@@ -42,6 +43,7 @@ export const Articles = () => {
           );
         })}
       </div>
+      <SecondFooter></SecondFooter>
     </div>
   );
 };
