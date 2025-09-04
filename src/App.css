@@ -14,15 +14,17 @@
   --color-lightGray: #6f6f6f;
 }
 .div-navbar {
-  height: fit-content;
+  position: relative;
+  height: 3rem;
   display: flex;
+  flex-direction: row;
   width: 100%;
   max-width: 100%;
-  justify-content: center;
   align-items: center;
-  padding: 1.4rem 0.7rem;
+  padding: 1rem 1rem;
   overflow: hidden;
-  background-color: red;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .hero-articles {
   max-width: 94%;
@@ -322,6 +324,20 @@ no es necesario
   justify-content: center;
   align-items: center;
 }
+.nav-hidden {
+  display: none;
+  z-index: 100;
+  flex-direction: column;
+  background-color: white;
+  padding: 0.5rem 1rem;
+}
+.nav-hidden-false {
+  display: flex;
+}
+.btn-navbar {
+  border: none;
+  background-color: transparent;
+}
 .App {
   text-align: center;
 }
@@ -422,12 +438,13 @@ deesktop
   display: block;
 }
 
-.flex-row-navbar {
+/* .flex-row-navbar {
+desktop
   display: flex;
   flex-direction: row;
   gap: 1.2rem;
   font-weight: 400;
-}
+} */
 .flex-row-navbar li:hover {
   color: #3c3cbf;
 }
@@ -538,7 +555,7 @@ deesktop
 .tabs {
   position: absolute;
   top: -38px;
-  right: 89px;
+  right: 19px;
   display: flex;
   flex-direction: row;
   gap: 0px;
@@ -1459,6 +1476,12 @@ desktop
     background: #fff5d6;
     background: -webkit-linear-gradient(to right, #ffffff, #fff8e1);
     background: linear-gradient(to right, #ffffff, #fffbee);
+  }
+  .flex-row-navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+    font-weight: 400;
   }
 }
 
