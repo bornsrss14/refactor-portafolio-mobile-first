@@ -15,11 +15,11 @@ export const ArticleItemGrid = ({ item }) => {
           src={item.articleImg}
         />
       </div>
-      <div className="">
+      <div style={{ width: "100%" }}>
         <div className="article-detailes">
-          <h2>{item.title}</h2>
-          <p>{`${item.minutesRead} min read`}</p>
+          <h4 className="txt-h4-mobile">{item.title}</h4>
         </div>
+        <p>{`${item.minutesRead} min read`}</p>
 
         <div className="brief-description">
           <p className="truncatedTxt">{item.content}</p>

@@ -16,14 +16,20 @@ export const ArticleItemList = ({ item }) => {
           src={item.articleImg}
         />
       </div>
-      <div className="">
+      <div style={{ width: "100%" }} className="">
         <div className="article-detailes">
-          <h2>{item.title}</h2>
+          <h3 style={{ color: "#3c3cbf" }} className="txt-h3-mobile">
+            {item.title}
+          </h3>
           <p>{item.subtitle}</p>
           <p>{`${item.minutesRead} min read`}</p>
-          <div className="flex-row">
+          <div className=" ">
             {item.categories.map((cat, key) => {
-              return <p key={`${item}key`}>{cat}</p>;
+              return (
+                <p className="hidden-mobile" key={`${item}key`}>
+                  {cat}
+                </p>
+              );
             })}
           </div>
         </div>
