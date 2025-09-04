@@ -8,7 +8,7 @@ export const ContactForm = () => {
   return (
     <>
       <main className="grid-footer-main">
-        <div className="mariposa">
+        <div className="mariposa hidden-mobile">
           <img
             className="img-full-cover"
             alt="clip"
@@ -42,12 +42,12 @@ export const ContactForm = () => {
           </div>
           <div className="div-item-left">
             <h2 id="contact-title" className="font-form-sub">
-              question or feedback?!
+              question or feedback?
             </h2>
             <p>
               Hit the button, and I’ll contact you by e-mail within 24 hours.
             </p>
-            <p style={{ fontSize: "10rem" }}>ツ</p>
+            <p className="carita-desktop-10rem">ツ</p>
           </div>
         </section>
 

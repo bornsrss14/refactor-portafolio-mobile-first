@@ -205,9 +205,61 @@ desktop
   width: 100%;
   height: auto;
 }
+.grid-footer-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  margin: 5rem auto;
+  height: 100%;
+}
+.mariposa {
+  height: 16rem;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 50%;
+  transform: translateX(80%) translateY(-35%) rotate(-6deg);
+}
+
+.div-item-left {
+  margin: 1rem auto;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.itemForm {
+  padding: 2.5rem 2rem 1.4rem;
+  width: 100%;
+  height: 100%;
+}
+.carita-desktop-10rem {
+  font-size: 4rem;
+}
+/* .rightForm {
+no es necesario
+} */
+.leftForm {
+  background: rgb(60, 60, 191);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 17rem;
+  overflow-y: hidden;
+}
+.font-form-sub {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+}
 .App {
   text-align: center;
 }
+
+/* DE AQUI PARA ARRIBA ES DE LA VERSION MOBIL */
 /* .img-container-hundred-porcent {
 desktop
   width: 100%;
@@ -539,33 +591,25 @@ deesktop
   height: 100%;
   object-fit: cover;
 }
-.grid-footer-main {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* sombra */
-  width: 75%;
-  margin: 5rem auto;
-  height: auto;
-}
-.itemForm {
-  padding: 1rem;
-  width: 100%;
-  height: 100%;
-}
-.leftForm {
-  background: #0f0c29; /* fallback for old browsers */
-  background: rgb(60, 60, 191);
 
+/* 
+
+*/
+
+/* .leftForm {
+  background: #0f0c29;
+  background: rgb(60, 60, 191);
   color: white;
-}
-.rightForm {
+} */
+/* fallback for old browsers */
+/* .rightForm {
+desktop
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+ */
 .grid-section-projects {
   display: grid;
   grid-template-columns: 26rem 1fr;
@@ -945,14 +989,6 @@ deesktop
 .font-sub-titles {
   font-family: "Playfair Display", serif;
 }
-.font-form-sub {
-  font-family: "Playfair Display", serif;
-  font-size: 2.3rem;
-}
-.div-item-left {
-  margin: 1.5rem 1.7rem;
-  padding: 1rem 1.4rem;
-}
 
 input[type="text"],
 input[type="email"] {
@@ -998,14 +1034,15 @@ textarea {
   justify-content: space-between;
 }
 
-.mariposa {
+/* .mariposa {
+desktop
   height: 342px;
   width: auto;
   position: absolute;
   top: 0;
   right: 50%;
   transform: translateX(50%) translateY(-33%);
-}
+} */
 
 .postItItem {
   position: absolute;
@@ -1333,8 +1370,47 @@ desktop
 }
 
 /* 💻 Desktop – 1025px to 1440px */
-@media (min-width: 1025px) and (max-width: 1440px) {
+@media (min-width: 1005px) and (max-width: 1440px) {
   /* estilos para desktops */
+  .carita-desktop-10rem {
+    font-size: 20rem;
+    display: block;
+  }
+  .mariposa {
+    height: 272px;
+    width: auto;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(47%) translateY(-33%);
+  }
+  .hidden-mobile {
+    display: block;
+  }
+  .grid-footer-main {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 75%;
+    margin: 5rem auto;
+    height: 25rem;
+  }
+  .carita-desktop-10rem {
+    font-size: 9rem;
+  }
+  .div-item-left {
+    padding-top: 2rem;
+  }
+  .itemForm {
+    padding: 2rem;
+    width: 100%;
+    height: 25rem;
+    overflow-y: hidden;
+  }
+  .font-form-sub {
+    font-family: "Playfair Display", serif;
+    font-size: 2.3rem;
+  }
 }
 
 /* 🖥️ Large desktop – 1441px and up */
