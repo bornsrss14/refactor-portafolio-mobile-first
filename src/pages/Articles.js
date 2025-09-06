@@ -13,9 +13,8 @@ export const Articles = () => {
     <div>
       <div className="hero-articles txt-normal-mobile">
         {" "}
-        Este es un breve espacio donde podrás leer mis artículos más recientes.
-        Creo que una de las mejores formas de reforzar mi conocimiento es
-        escribir sobre lo que voy entendiendo después de la práctica ✨
+        This is where i share my latest articles. For me, writing is a great way
+        to strengthen the knowledge i gain while coding ✨
       </div>
       <section>
         <div className="container-grid-view">

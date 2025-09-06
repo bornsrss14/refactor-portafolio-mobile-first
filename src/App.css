@@ -13,18 +13,21 @@
 :root {
   --color-lightGray: #6f6f6f;
 }
-.div-navbar {
-  position: relative;
-  height: 3rem;
+header {
   display: flex;
-  flex-direction: row;
+  width: 100%;
+  padding: 0 1.1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.div-navbar {
   width: 100%;
   max-width: 100%;
-  align-items: center;
-  padding: 1rem 1rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  justify-content: space-between;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0rem;
 }
 .hero-articles {
   max-width: 94%;
@@ -331,12 +334,68 @@ no es necesario
   background-color: white;
   padding: 0.5rem 1rem;
 }
-.nav-hidden-false {
-  display: flex;
+.menu-content {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.4s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #0055ff;
+  z-index: 100;
+  overflow: hidden;
 }
-.btn-navbar {
-  border: none;
+
+.menu-content.show {
+  transform: scaleY(1);
+  width: 500px;
+}
+.menu-item-nav {
+  margin-bottom: 10px;
+}
+.menu-link-nav {
+  color: rgb(4, 4, 30);
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  padding: 8px 0;
+  transition: color 0.3s;
+}
+.menu-link-nav:hover {
+  color: #3498db;
+}
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.burger-button {
   background-color: transparent;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.burger-button[aria-expanded="true"] .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 4px);
+}
+
+.burger-button[aria-expanded="true"] .burger-line:nth-child(2) {
+  opacity: 0;
+}
+.burger-button[aria-expanded="true"] .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -7px);
+}
+.menu-list {
+  list-style: none;
+  padding: 20px;
 }
 .App {
   text-align: center;
