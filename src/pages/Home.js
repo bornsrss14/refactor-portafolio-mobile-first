@@ -63,78 +63,76 @@ export const Home = () => {
               <div class="blur-overlay"></div>
             </div>
           </div>
-          <div>
-            <div className="div-touch-files-1">
-              <SectionSubtitle txtSubtitle={"Introduction"} />
-              <div>
-                <div className="arriba">
-                  <div className="grid-about-me">
-                    <div className="introduction-g1">
-                      <h3>Front-End development based in Veracruz, México</h3>
-                      <p>
-                        Front-End developer with a background in Software
-                        Engineering and a user-centered mindset. I build clean,{" "}
-                        <span style={strong}>responsive</span>, and functional{" "}
-                        <span style={strong}>web solutions</span> using modern
-                        technologies like <span style={strong}>JavaScript</span>
-                        , <span style={strong}>React</span>, and
-                        <span style={strong}> Taildwind CSS</span>, I work with
-                        precision, purpose and character — ready to bring real
-                        value to any development team.
-                      </p>
-                    </div>
-                    <div className="introduction-g2">
-                      {/*  <img
+        </div>
+        <div className="div-touch-files-1">
+          <SectionSubtitle txtSubtitle={"Introduction"} />
+
+          <div className="arriba">
+            <div className="grid-about-me">
+              <div className="introduction-g1">
+                <h3>Front-End development based in Veracruz, México</h3>
+                <p>
+                  Front-End developer with a background in Software Engineering
+                  and a user-centered mindset. I build clean,{" "}
+                  <span style={strong}>responsive</span>, and functional{" "}
+                  <span style={strong}>web solutions</span> using modern
+                  technologies like <span style={strong}>JavaScript</span>,{" "}
+                  <span style={strong}>React</span>, and
+                  <span style={strong}> Taildwind CSS</span>, I work with
+                  precision, purpose and character — ready to bring real value
+                  to any development team.
+                </p>
+              </div>
+              <div className="introduction-g2">
+                {/*  <img
                     style={{ height: "130px", width: "200px" }}
                     alt="doodle"
                     src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2FOpen%20Doodles%20-%20Reading.png?alt=media&token=cd682543-e3e2-47a1-8caf-51627e802218"
                     ></img> */}
-                      <Titulo measure="80px"></Titulo>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="div-touch-files">
-              <div>
-                <SectionSubtitle txtSubtitle={"Let's create and conect"} />
-                <p>
-                  Explore my professional experience and check out my CV in the
-                  links below.
-                </p>
-                <p>Currently available for on-site and remote work</p>
-              </div>
-              <div className="flex-row">
-                <Folder
-                  linkMedia={
-                    "https://www.linkedin.com/in/bornsrss/details/certifications/"
-                  }
-                  label="LinkedIn"
-                  color="#F7B500"
-                />
-                <Folder
-                  linkMedia={"https://github.com/bornsrss14"}
-                  label="GitHub"
-                  color="#F7B500"
-                />
-                <Folder
-                  linkMedia={
-                    "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fcv-rosariofuentes.pdf?alt=media&token=0ea89b39-fc83-4ca3-96dc-1c306e6aa87d"
-                  }
-                  label="Download my CV"
-                  color="#F7B500"
-                />
-
-                <Link to={"/ui-components"}>
-                  <Folder label="UI Components" color="#F7B500"></Folder>
-                </Link>
+                <Titulo measure="80px"></Titulo>
               </div>
             </div>
           </div>
         </div>
+        <div className="div-touch-files">
+          <div>
+            <SectionSubtitle txtSubtitle={"Let's create and conect"} />
+            <p>
+              Explore my professional experience and check out my CV in the
+              links below.
+            </p>
+            <p>Currently available for on-site and remote work</p>
+          </div>
+          <div className="flex-carpets">
+            <Folder
+              linkMedia={
+                "https://www.linkedin.com/in/bornsrss/details/certifications/"
+              }
+              label="LinkedIn"
+              color="#F7B500"
+            />
+            <Folder
+              linkMedia={"https://github.com/bornsrss14"}
+              label="GitHub"
+              color="#F7B500"
+            />
+            <Folder
+              linkMedia={
+                "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fcv-rosariofuentes.pdf?alt=media&token=0ea89b39-fc83-4ca3-96dc-1c306e6aa87d"
+              }
+              label="Download my CV"
+              color="#F7B500"
+            />
+
+            <Link to={"/ui-components"}>
+              <Folder label="UI Components" color="#F7B500"></Folder>
+            </Link>
+          </div>
+        </div>
       </section>
+
       <section className="grid-section-projects">
-        <div className="container-arrow-hash">
+        <div className="container-arrow-hash-none container-arrow-hash ">
           <div>
             <IconArrowLeft size={"14rem"} className="arrow" />
           </div>
@@ -163,9 +161,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div>
-          <PortfolioFolderLayout />
-        </div>
+        <PortfolioFolderLayout />
       </section>
       <section className="grid-experience">
         <div className="item">

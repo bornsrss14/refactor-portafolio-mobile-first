@@ -54,12 +54,12 @@ export const CardContent = ({ item }) => {
           <p className="para-about">{item.briefDescription}</p>
 
           {/* video con estado de carga */}
-          <div className={`video-container `}>
+          <div className="video-container">
             {mediaStatus.videoError ? (
               <div className="media-error">Video no disponible</div>
             ) : (
               <video
-                width="440"
+                width="100%"
                 height="auto"
                 autoPlay
                 muted
