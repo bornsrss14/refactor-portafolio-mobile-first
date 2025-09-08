@@ -8,13 +8,18 @@ import ContactForm from "./pages/ContactForm";
 import AboutMe from "./pages/AboutMe";
 import UiComponents from "./pages/UiComponents";
 import DetailedArticle from "./pages/DetailedArticle";
-import SecondFooter from "./components/SecondFooter";
 
 function App() {
+  const handleScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // suave
+    });
+  };
   return (
     <>
       <BrowserRouter>
-        <Navbar></Navbar>
+        <Navbar handleScrollTop={handleScrollTop}></Navbar>
         <Routes>
           <Route path="/ui-components" element={<UiComponents />}></Route>
           <Route path="/about-me" element={<AboutMe />}></Route>

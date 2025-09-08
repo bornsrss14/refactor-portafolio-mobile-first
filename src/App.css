@@ -620,6 +620,7 @@ li {
   flex-direction: row;
   place-items: center;
   gap: 0.5rem;
+  height: 100%;
   font-weight: 700;
 }
 
@@ -644,7 +645,9 @@ li {
 
 .container-col {
   display: flex;
+  height: fit-content;
   flex-direction: column; /* los hijos se acomodan en columna si quieres */
+  place-content: center;
   gap: 0.5rem; /* espacio opcional entre filas */
 }
 .submenu {
@@ -1749,17 +1752,14 @@ desktop
   .message-footer {
     font-size: 5rem;
   }
-  /* .div-navbar {
+  .div-navbar {
     display: flex;
-    align-items: center;
+    padding: 0.5rem 3.5rem;
+    flex-direction: row;
+
     justify-content: space-between;
-    position: sticky;
-    width: 100%;
-    background-color: white;
-    padding: 0.9rem 5%;
-    font-size: 1.2rem;
-    box-shadow: 4px 4px 5px rgba(74, 72, 72, 0.053);
-  } */
+    align-items: center;
+  }
 
   .about-me {
     width: 100%;
@@ -1839,6 +1839,34 @@ desktop
     box-shadow: 0 8px 14px rgba(121, 121, 121, 0.15);
     position: relative;
     cursor: pointer;
+  }
+  .menu-content {
+    transform: none !important; /* sin animación */
+    position: static; /* parte del flow normal */
+    background-color: transparent; /* opcional, para que se vea como navbar */
+    width: 33rem !important;
+    display: flex; /* menú siempre visible */
+    justify-content: space-around; /* alineación opcional */
+    gap: 1rem; /* espaciado entre items */
+  }
+  .burger-button {
+    display: none;
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+  }
+  .header-desktop {
+    display: flex;
+    flex-direction: row;
+    width: 16rem;
+    overflow: hidden;
+    width: fit-content;
+  }
+  .txt-logo-desktop {
+    font-size: 1.5rem;
   }
 }
 
