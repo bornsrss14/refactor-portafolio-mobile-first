@@ -1,6 +1,4 @@
-import LogoScalable from "../core/LogoScalable";
 import SecondFooter from "./SecondFooter";
-import SocialMediaIcons from "./SocialMediaIcons";
 
 export const DetailedObjectArticle = ({ objectItem }) => {
   return (

@@ -1,4 +1,3 @@
-import React from "react";
 import LogoScalable from "../core/LogoScalable";
 import SocialMediaIcons from "./SocialMediaIcons";
 

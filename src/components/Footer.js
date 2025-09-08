@@ -1,6 +1,4 @@
 import { IconChevronCompactUp } from "@tabler/icons-react";
-import LogoScalable from "../core/LogoScalable";
-import SocialMediaIcons from "./SocialMediaIcons";
 import SecondFooter from "./SecondFooter";
 
 export const Footer = () => {
