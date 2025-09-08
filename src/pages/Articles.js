@@ -11,7 +11,7 @@ export const Articles = () => {
   const [view, setView] = useState("list");
   return (
     <div>
-      <div className="hero-articles txt-normal-mobile">
+      <div className="hero-articles txt-normal-mobile extra-margin">
         {" "}
         This is where i share my latest articles. For me, writing is a great way
         to strengthen the knowledge i gain while coding ✨

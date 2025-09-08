@@ -7,7 +7,7 @@ export const ContactForm = () => {
 
   return (
     <>
-      <main className="grid-footer-main">
+      <main className="grid-footer-main extra-margin-extra">
         <div className="mariposa hidden-mobile">
           <img
             className="img-full-cover"

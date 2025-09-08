@@ -9,7 +9,7 @@ export const ArticleItemList = ({ item }) => {
           {item.dateNumber > 10 ? item.dateNumber : `0${item.dateNumber}`}
         </p>
       </div>
-      <div className="img-article-mobile img-article">
+      <div className=" img-article">
         <img
           alt="img-article"
           className="img-full-cover "
@@ -23,7 +23,7 @@ export const ArticleItemList = ({ item }) => {
           </h3>
           <p>{item.subtitle}</p>
           <p>{`${item.minutesRead} min read`}</p>
-          <div className=" ">
+          <div style={{ color: "#3c3cbf" }} className="flex-row">
             {item.categories.map((cat, key) => {
               return (
                 <p className="hidden-mobile" key={`${item}key`}>

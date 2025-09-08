@@ -15,8 +15,13 @@ export const Titulo = ({ measure = "130px" }) => {
             alt="titulo"
           ></img>
         </div>
-        <h3 style={{ color: "rgba(7, 7, 185, 1)" }}> Rosario Fuentes García</h3>
-        <p className=" typeWork-txt">Ing. de Software </p>
+        <h3 style={{ fontSize: "1.4rem", color: "rgba(7, 7, 185, 1)" }}>
+          {" "}
+          Rosario Fuentes García
+        </h3>
+        <p className=" typeWork-txt">
+          Ing. de Software —<span>Cédula:1025479</span>{" "}
+        </p>
 
         <div className="redes-sociales">
           <SocialMediaIcons />

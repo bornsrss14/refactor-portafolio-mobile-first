@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export const AboutMe = () => {
   return (
     <>
-      <main id="main-grid-about">
+      <main id="main-grid-about" className="extra-margin">
         <section className="sec-txt item-about">
           <h1 className="message-footer-bye">
             <span>

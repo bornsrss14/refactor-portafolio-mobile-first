@@ -129,9 +129,9 @@ export const CardContent = ({ item }) => {
               </div>
             </div>
           </div>
-          <p>
-            Garantizando una experiencia óptima en dispositivos móviles y
-            pantallas pequeñas.
+          <p style={{ marginBottom: ".5rem" }}>
+            Providing a seamless experience across mobile devices and smaller
+            screen.
           </p>
           <div className="tutorial-links">
             <a target="_blank" rel="noreferrer" href={item.liveDemo}>

@@ -35,7 +35,7 @@ export const Home = () => {
   ];
   return (
     <>
-      <section className="about-me">
+      <section className="about-me extra-margin">
         <div className="grid-photo-introduction">
           <div className="photo">
             <div>
@@ -60,13 +60,11 @@ export const Home = () => {
                 className="rosario"
                 alt="rosario"
               ></img>
-              <div class="blur-overlay"></div>
+              <div className="blur-overlay"></div>
             </div>
           </div>
         </div>
         <div className="div-touch-files-1">
-          <SectionSubtitle txtSubtitle={"Introduction"} />
-
           <div className="arriba">
             <div className="grid-about-me">
               <div className="introduction-g1">
@@ -96,7 +94,7 @@ export const Home = () => {
         </div>
         <div className="div-touch-files">
           <div>
-            <SectionSubtitle txtSubtitle={"Let's create and conect"} />
+            <SectionSubtitle txtSubtitle={"Let's create!"} />
             <p>
               Explore my professional experience and check out my CV in the
               links below.
@@ -167,7 +165,7 @@ export const Home = () => {
         <div className="item">
           <div id="myResumen"></div>
           <SectionSubtitle txtSubtitle={"Experience"} />
-          <div>
+          <div className="content-true-false">
             <ExperienceItem
               typeWork="Paralegal at notary office"
               place="Notaria no. 9"
