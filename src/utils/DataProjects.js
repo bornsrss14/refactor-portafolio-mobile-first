@@ -33,8 +33,10 @@ const DataProjects = [
     briefDescription:
       "This is the next project i have been working, so it is not full coded, i'll be exited to share with you the final product, so, stay tuned!",
     url_video: "",
-    firstScreenShot: "",
-    secondScreenShot: "",
+    firstScreenShot:
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2F_captura-segundo-mubi.png?alt=media&token=9161cefe-9647-4da3-8672-de2347244adf",
+    secondScreenShot:
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2F_captura_primera_mubi.png?alt=media&token=f70b0c9c-c2d4-4cd5-8bb8-47ef7b8d9228",
     gitRepo: "https://github.com/bornsrss14/mubi_pandas",
     liveDemo: "",
   },
