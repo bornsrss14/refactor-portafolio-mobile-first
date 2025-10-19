@@ -22,12 +22,15 @@ export const ArticleItemList = ({ item }) => {
       </div>
       <div style={{ width: "100%" }} className="">
         <div className="article-detailes">
-          <h3 style={{ color: "#3c3cbf" }} className="txt-h3-mobile">
+          <h3
+            style={{ color: "var(--c-primary-blue)" }}
+            className="txt-h3-mobile"
+          >
             {item.title}
           </h3>
           <p>{item.subtitle}</p>
           <p>{`${item.minutesRead} min read`}</p>
-          <div style={{ color: "#3c3cbf" }} className="flex-row">
+          <div style={{ color: "var(--c-primary-blue)" }} className="flex-row">
             {item.categories.map((cat, key) => {
               return (
                 <p className="hidden-mobile" key={`${item}key`}>

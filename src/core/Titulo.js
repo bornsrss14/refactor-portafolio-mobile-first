@@ -20,10 +20,7 @@ export const Titulo = ({ measure = "130px" }) => {
             }
           ></OptimizedImage>
         </div>
-        <h3 style={{ fontSize: "1.1rem", color: "rgba(7, 7, 185, 1)" }}>
-          {" "}
-          Rosario Fuentes García
-        </h3>
+        <h3 className="name-rosario"> Rosario Fuentes García</h3>
         <p className=" typeWork-txt">
           Ing. de Software <span> | Universidad Veracruz</span>{" "}
         </p>

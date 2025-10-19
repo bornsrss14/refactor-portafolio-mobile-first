@@ -12,7 +12,16 @@
 }
 :root {
   --color-lightGray: #6f6f6f;
+  --c-yellow-gold: rgb(247, 181, 0);
+  --c-yellow-pastel: rgb(255, 245, 169);
+  --c-primary-blue: rgb(0, 0, 173);
+  --color-hover-blue: #69b4e6;
+  --purple-pastel: #9a7fed;
+  --cyan: rgb(0, 194, 203);
+  --aqua-pastel: #9bdcc4;
+  --orange: rgb(255, 107, 53);
 }
+
 .extra-margin {
   margin-top: 5rem !important;
 }
@@ -189,7 +198,7 @@ header {
   padding: 0 1.5rem;
 }
 .txt-highlighted {
-  color: rgb(60, 60, 191);
+  color: var(--c-primary-blue);
   font-size: 1rem;
 }
 .img-container-hundred-porcent {
@@ -234,7 +243,7 @@ header {
 no es necesario
 } */
 .leftForm {
-  background: rgb(60, 60, 191);
+  background: var(--c-primary-blue);
   color: white;
   display: flex;
   flex-direction: column;
@@ -261,7 +270,7 @@ no es necesario
 }
 .message-footer-bye {
   font-size: 3rem;
-  color: #3c3cbf;
+  color: var(--c-primary-blue);
 }
 .message-footer {
   font-size: 3rem;
@@ -350,7 +359,7 @@ no es necesario
   transition: color 0.3s;
 }
 .menu-link-nav:hover {
-  color: #3498db;
+  color: var(--color-hover-blue);
 }
 .burger-line {
   width: 100%;
@@ -503,7 +512,7 @@ desktop
   border-radius: 15px;
   min-width: 15rem;
   color: white;
-  background-color: rgb(60, 60, 191);
+  background-color: var(--c-primary-blue);
   max-width: 100%;
   height: auto;
   padding: 1rem 1.4rem;
@@ -783,29 +792,32 @@ desktop
 
 .estiloBotonActivo {
   transform: translateY(0px) !important;
-  background: rgb(60, 60, 191) !important;
+  background: var(--c-primary-blue) !important;
   font-weight: 700 !important;
   color: white !important;
 }
 
 .green {
-  background-color: #9bdcc4;
+  background-color: var(--aqua-pastel);
 }
 .purple {
-  background-color: #9a7fed;
+  background-color: var(--purple-pastel);
 }
 .blue {
-  background-color: rgb(0, 194, 203);
+  background-color: var(--cyan);
 }
 .orange {
   background-color: rgb(255, 107, 53);
 }
 .yellow {
-  background-color: rgb(247, 181, 0);
+  background-color: var(--c-yellow-gold);
 }
 .pink {
-  background-color: rgb(255, 245, 169);
-  color: #3333aa;
+  background-color: var(--c-yellow-pastel);
+  color: var(--c-primary-blue);
+}
+.blue-primary {
+  color: var(--c-primary-blue);
 }
 
 .content {
@@ -862,7 +874,7 @@ desktop
 
 /* .leftForm {
   background: #0f0c29;
-  background: rgb(60, 60, 191);
+  background: var(--c-primary-blue);
   color: white;
 } */
 /* fallback for old browsers */
@@ -1101,7 +1113,7 @@ desktop
   min-width: 100%;
   height: 20rem;
   /* background-color: rgb(5, 5, 79); */
-  background-color: rgb(60, 60, 191);
+  background-color: var(--c-primary-blue);
 }
 
 .arrow {
@@ -1123,7 +1135,7 @@ desktop
 
 .container-message p {
   font-size: 1.1rem;
-  color: #3c3cbf;
+  color: var(--c-primary-blue);
 }
 
 .abs-icon-1 {
@@ -1743,7 +1755,7 @@ desktop
 
   .message-footer-bye {
     font-size: 5rem;
-    color: #3c3cbf;
+    color: var(--c-primary-blue);
   }
   .message-footer {
     font-size: 5rem;
@@ -1810,7 +1822,7 @@ desktop
     padding: 40px 20px;
     background-color: #f8f9ff; /* fondo suave */
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.042);
   }
   /* .projects-intro {
   max-width: 900px; ancho máximo
@@ -1947,4 +1959,9 @@ desktop
   padding: 10px;
   background: #f0f0f0;
   border-radius: 8px;
+}
+
+.name-rosario {
+  font-size: 1.1rem;
+  color: var(--c-primary-blue);
 }

@@ -46,7 +46,7 @@ export const Navbar = ({ handleScrollTop }) => {
           <Link onClick={() => closeMenu()} to={"/"}>
             <div className="flex-row">
               <h3 className="txt-logo-desktop">
-                <span style={{ color: "rgb(60, 60, 191)" }}>panda</span>
+                <span className="blue-primary">panda</span>
                 sneezing
               </h3>
               <LogoScalable
