@@ -338,7 +338,6 @@ no es necesario
   width: 500px;
 }
 .menu-item-nav {
-  margin-bottom: 10px;
   font-size: 1rem;
   font-weight: 400;
 }
@@ -1751,7 +1750,7 @@ desktop
   }
   .div-navbar {
     display: flex;
-    padding: 0.5rem 3.5rem;
+    padding: 1rem 3.5rem;
     flex-direction: row;
 
     justify-content: space-between;
