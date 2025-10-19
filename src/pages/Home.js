@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import Titulo from "../core/Titulo";
 import { SectionSubtitle } from "../core/SectionSubtitle";
 import { Link } from "react-router-dom";
+import { OptimizedImage } from "../hooks/useOptimizedImage";
 
 export const Home = () => {
   const SuperStrong = ({ children }) => (
@@ -55,11 +56,16 @@ export const Home = () => {
               </p>
             </div>
             <div className="picture-of-me">
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fme-me.jpg?alt=media&token=f8e75c9e-f940-4e45-8b0c-5dffe6f391c3"
-                className="rosario"
-                alt="rosario"
-              ></img>
+              <OptimizedImage
+                placeholder="/public/lowQuality.jpeg"
+                className="rosario rounded-x1 shadow-md"
+                skeletonClassName="rounded-x1"
+                alt="img-rosario"
+                src={
+                  "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fme-me.jpg?alt=media&token=f8e75c9e-f940-4e45-8b0c-5dffe6f391c3"
+                }
+              ></OptimizedImage>
+
               <div className="blur-overlay"></div>
             </div>
           </div>

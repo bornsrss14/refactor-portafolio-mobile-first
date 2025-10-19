@@ -1,5 +1,7 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
+import { OptimizedImage } from "../hooks/useOptimizedImage";
 export const ArticleItemList = ({ item }) => {
+  console.log(item, "Este es mi item y la imagen es", item.articleImg);
   return (
     <div className="full-article-container">
       <div className="date-article">
@@ -10,11 +12,13 @@ export const ArticleItemList = ({ item }) => {
         </p>
       </div>
       <div className=" img-article">
-        <img
-          alt="img-article"
-          className="img-full-cover "
+        <OptimizedImage
+          placeholder="/lowQuality.jpeg"
+          className="rounded shadow"
+          skeletonClassName="rounded"
+          alt="Imagen del artículo"
           src={item.articleImg}
-        />
+        ></OptimizedImage>
       </div>
       <div style={{ width: "100%" }} className="">
         <div className="article-detailes">

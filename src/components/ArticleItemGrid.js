@@ -1,4 +1,5 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
+import { OptimizedImage } from "../hooks/useOptimizedImage";
 export const ArticleItemGrid = ({ item }) => {
   return (
     <div className="full-article-container-grid">
@@ -9,11 +10,13 @@ export const ArticleItemGrid = ({ item }) => {
         </p>
       </div>
       <div className="img-article-grid-mobile">
-        <img
+        <OptimizedImage
+          placeholder="/public/lowQuality.jpeg"
+          className="rounded-x1 shadow-md"
+          skeletonClassName="rounded-x1"
           alt="img-article"
-          className="img-full-cover "
           src={item.articleImg}
-        />
+        ></OptimizedImage>
       </div>
       <div style={{ width: "100%" }}>
         <div className="article-detailes">

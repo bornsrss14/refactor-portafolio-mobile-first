@@ -1875,3 +1875,69 @@ desktop
 @media (min-width: 1441px) {
   /* estilos para pantallas grandes */
 }
+
+/* Estilos de el hook de carga de imagenes */
+.optimized-image {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.optimized-image__img {
+  width: 100%;
+  height: auto;
+  transition: all 0.7s ease-out;
+}
+
+/* Estados de carga */
+.optimized-image__img.loading {
+  filter: blur(20px);
+  transform: scale(1.05);
+  opacity: 0.7;
+}
+
+.optimized-image__img.loaded {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Skeleton */
+.optimized-image__skeleton {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Error */
+.optimized-image.error {
+  background-color: #e6e6e6;
+  color: #777;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  height: 100%;
+}
+
+.optimized-image__error-text {
+  padding: 0.5rem;
+}
+
+.masonry-img img {
+  width: 100%;
+  display: block;
+}

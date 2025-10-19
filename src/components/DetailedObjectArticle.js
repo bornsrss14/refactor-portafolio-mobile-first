@@ -1,3 +1,4 @@
+import { OptimizedImage } from "../hooks/useOptimizedImage";
 import SecondFooter from "./SecondFooter";
 
 export const DetailedObjectArticle = ({ objectItem }) => {
@@ -10,11 +11,14 @@ export const DetailedObjectArticle = ({ objectItem }) => {
             <em>{objectItem.content}</em>
           </p>
           <div className="img-mobile-entire">
-            <img
-              className="img-full-cover"
-              alt="img-banner"
+            <OptimizedImage
+              placeholder="/public/lowQuality.jpeg"
+              className="rounded-x1 shadow-md img-full-cover"
+              skeletonClassName="rounded-x1"
+              alt="img-article"
               src={objectItem.banner}
-            />
+            ></OptimizedImage>
+
             <p className="typeWork-txt">{objectItem.balazoArticleImg}</p>
           </div>
         </div>
@@ -64,11 +68,18 @@ export const DetailedObjectArticle = ({ objectItem }) => {
                   )}
                   {section.codeSnippet?.codePreview && (
                     <div className="img-container-hundred-porcent">
-                      <img
+                      {/*  <img
                         src={section.codeSnippet.codePreview}
                         className="img-full-cover"
                         alt="img-code-preview"
-                      />
+                      /> */}
+                      <OptimizedImage
+                        placeholder="/lowQuality.jpeg"
+                        className="rounded shadow"
+                        skeletonClassName="rounded"
+                        alt="Imagen del artículo"
+                        src={section.codeSnippet.codePreview}
+                      ></OptimizedImage>
                       <p>{section.codeSnippet.balazo}</p>
                     </div>
                   )}
