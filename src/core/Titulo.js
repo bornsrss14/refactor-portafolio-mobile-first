@@ -25,7 +25,7 @@ export const Titulo = ({ measure = "130px" }) => {
           Rosario Fuentes García
         </h3>
         <p className=" typeWork-txt">
-          Ing. de Software <span></span>{" "}
+          Ing. de Software <span> | Universidad Veracruz</span>{" "}
         </p>
 
         <div className="redes-sociales">

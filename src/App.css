@@ -1843,10 +1843,9 @@ desktop
     transform: none !important; /* sin animación */
     position: static; /* parte del flow normal */
     background-color: transparent; /* opcional, para que se vea como navbar */
-    width: 33rem !important;
+    width: 42rem !important;
     display: flex; /* menú siempre visible */
     justify-content: space-around; /* alineación opcional */
-    gap: 1rem; /* espaciado entre items */
   }
   .burger-button {
     display: none;
@@ -1856,6 +1855,8 @@ desktop
     flex-direction: row;
     list-style: none;
     padding: 0;
+    justify-content: center;
+    align-items: center;
   }
   .header-desktop {
     display: flex;
@@ -1938,4 +1939,13 @@ desktop
 .masonry-img img {
   width: 100%;
   display: block;
+}
+
+.icon-native {
+  font-size: 24px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  background: #f0f0f0;
+  border-radius: 8px;
 }
