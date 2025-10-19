@@ -14,7 +14,7 @@ export const SecondFooter = () => {
             customWidth="30px"
           ></LogoScalable>
 
-          <p> 2025, made by Rosario Fuentes with ♡</p>
+          <p> 2025, made with love ♡ and React</p>
         </div>
         <SocialMediaIcons />
       </section>

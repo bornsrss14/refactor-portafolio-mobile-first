@@ -3,7 +3,7 @@ export const SectionSubtitle = ({ txtSubtitle }) => {
   return (
     <>
       <div className="flex-circle-txt-sub ">
-        <h1 className="font-sub-titles">{txtSubtitle}</h1>
+        <h2 className="font-sub-titles">{txtSubtitle}</h2>
         <div className="big-circle">
           <IconChevronDown />
         </div>

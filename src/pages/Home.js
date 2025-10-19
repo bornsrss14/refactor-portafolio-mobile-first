@@ -27,12 +27,13 @@ export const Home = () => {
     "React.js, JavaScript ES6+, HTML5, CSS3",
     "Responsive design & cross-browser compatibility",
     " Component-based architecture and reusable UI patterns",
-    " Tailwind CSS, CSS Modules",
+    " Tailwind CSS, Styles CSS",
     " UX principles and design systems",
     " Git & GitHub",
     "API integration (REST)",
     "State management (React hooks, Context API)",
     "Basic SEO best practices",
+    "DB: MySQL (familiar with queries and structure) ",
   ];
   return (
     <>
@@ -82,9 +83,8 @@ export const Home = () => {
                   <span style={strong}>web solutions</span> using modern
                   technologies like <span style={strong}>JavaScript</span>,{" "}
                   <span style={strong}>React</span>, and
-                  <span style={strong}> Taildwind CSS</span>, I work with
-                  precision, purpose and character — ready to bring real value
-                  to any development team.
+                  <span style={strong}> Taildwind CSS</span>— ready to bring
+                  real value to any development team.
                 </p>
               </div>
               <div className="introduction-g2">
@@ -93,7 +93,7 @@ export const Home = () => {
                     alt="doodle"
                     src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2FOpen%20Doodles%20-%20Reading.png?alt=media&token=cd682543-e3e2-47a1-8caf-51627e802218"
                     ></img> */}
-                <Titulo measure="80px"></Titulo>
+                <Titulo measure="70px"></Titulo>
               </div>
             </div>
           </div>
