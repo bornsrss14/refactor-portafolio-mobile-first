@@ -25,7 +25,7 @@ const DataProjects = [
     secondScreenShot:
       "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fsecond-ss-two.jpg?alt=media&token=5647ca0b-d628-440c-8dd3-6c84fe44344f",
     gitRepo: "https://github.com/bornsrss14/notaria-nueve",
-    liveDemo: "",
+    liveDemo: "https://notariacordoba.netlify.app/servicios/nuestros-servicios",
   },
   {
     id: 1003,
@@ -38,7 +38,7 @@ const DataProjects = [
     secondScreenShot:
       "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2F_captura_primera_mubi.png?alt=media&token=f70b0c9c-c2d4-4cd5-8bb8-47ef7b8d9228",
     gitRepo: "https://github.com/bornsrss14/mubi_pandas",
-    liveDemo: "",
+    liveDemo: "https://mubipandas.rosfuentes.dev/",
   },
   {
     id: 1004,

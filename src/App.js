@@ -8,6 +8,7 @@ import ContactForm from "./pages/ContactForm";
 import AboutMe from "./pages/AboutMe";
 import UiComponents from "./pages/UiComponents";
 import DetailedArticle from "./pages/DetailedArticle";
+import ThemeContextProvider from "./contexts/ThemeContext";
 
 function App() {
   const handleScrollTop = () => {
@@ -18,21 +19,23 @@ function App() {
   };
   return (
     <>
-      <BrowserRouter>
-        <Navbar handleScrollTop={handleScrollTop}></Navbar>
-        <Routes>
-          <Route path="/ui-components" element={<UiComponents />}></Route>
-          <Route path="/about-me" element={<AboutMe />}></Route>
-          <Route path="/contact" element={<ContactForm />}></Route>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/blog" element={<Articles />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-          <Route
-            path="/detalle-articulo/:id"
-            element={<DetailedArticle />}
-          ></Route>
-        </Routes>
-      </BrowserRouter>
+      <ThemeContextProvider>
+        <BrowserRouter>
+          <Navbar handleScrollTop={handleScrollTop}></Navbar>
+          <Routes>
+            <Route path="/ui-components" element={<UiComponents />}></Route>
+            <Route path="/about-me" element={<AboutMe />}></Route>
+            <Route path="/contact" element={<ContactForm />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/blog" element={<Articles />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+            <Route
+              path="/detalle-articulo/:id"
+              element={<DetailedArticle />}
+            ></Route>
+          </Routes>
+        </BrowserRouter>
+      </ThemeContextProvider>
     </>
   );
 }

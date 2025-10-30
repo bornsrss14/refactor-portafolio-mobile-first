@@ -150,12 +150,12 @@ export const Home = () => {
               <p>#React</p>
             </div>
             <div className="flex-hash">
-              <p>#SQL</p>
+              <p>#MySQL</p>
               <p>#NodeJs</p>
             </div>
             <div className="flex-hash">
               <p>#Figma</p>
-              <p>#SQL</p>
+              <p>#ContextAPI</p>
               <p>#Hooks</p>
             </div>
             <div className="flex-hash">
