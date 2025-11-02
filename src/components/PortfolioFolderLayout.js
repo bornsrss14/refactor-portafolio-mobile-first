@@ -4,9 +4,9 @@ import DataProjects from "../utils/DataProjects";
 import DefaultCard from "./DefaultCard";
 
 const tabs = [
-  { id: 1001, label: "Pokedex", className: "green" },
+  { id: 1001, label: "MUBI::", className: "blue" },
   { id: 1002, label: "Notary", className: "purple" },
-  { id: 1003, label: "MUBI::", className: "blue" },
+  { id: 1003, label: "Pokedex", className: "green" },
   { id: 1004, label: "Maps", className: "orange" },
   { id: 1005, label: "Split bills", className: "yellow" },
   { id: 1006, label: "To-Do", className: "green" },
