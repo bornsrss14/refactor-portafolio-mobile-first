@@ -584,6 +584,7 @@ desktop
   flex-direction: column;
   margin: 0rem 1rem;
   height: auto;
+  padding: 1rem 3rem;
 }
 .flex-circle-txt-sub {
   display: flex;
@@ -735,7 +736,7 @@ desktop
 /*  files*/
 
 .folder {
-  width: 9rem;
+  width: 10rem;
   height: 5.5rem;
   border-radius: 8px;
   box-shadow: 0 8px 14px rgba(121, 121, 121, 0.15);
@@ -1510,7 +1511,7 @@ desktop
 @media (min-width: 1024px) {
   .personal-projects-section {
     max-width: 90%;
-    margin: 1rem auto 1.4rem;
+    margin: 0.6rem auto 1rem;
     text-align: center;
   }
   .personal-projects-section h2 {
@@ -1700,12 +1701,13 @@ desktop
     gap: 1.5rem;
   }
   .grid-about-me {
-    padding: 1rem 1rem;
+    padding: 1rem 3rem;
     grid-template-columns: 1fr 10rem;
     place-items: center;
     gap: 2rem;
     border: 2px solid var(--white-dark);
     border-radius: 14px;
+    width: 44rem;
   }
   .grid-about-me > *:first-child {
     order: 1; /* se manda a la segunda columna */
@@ -1921,14 +1923,15 @@ desktop
   }
 
   .folder {
-    width: 7rem;
-    min-width: 7rem;
-    height: 4rem;
+    width: 8rem;
+    min-width: 8rem;
+    height: 5rem;
     border-radius: 7px;
     box-shadow: 0 8px 14px rgba(121, 121, 121, 0.181);
     position: relative;
     cursor: pointer;
   }
+
   .menu-content {
     transform: none !important; /* sin animación */
     position: static; /* parte del flow normal */
