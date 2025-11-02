@@ -15,14 +15,15 @@ import { OptimizedImage } from "../hooks/useOptimizedImage";
 
 export const Home = () => {
   const SuperStrong = ({ children }) => (
-    <strong className="name-message" style={{ fontSize: "3.3rem" }}>
+    <p className="name-message" style={{ fontSize: "3.6rem" }}>
       {children}
-    </strong>
+    </p>
   );
   const strong = {
     fontWeight: "500",
     color: "rgb(84, 84, 84)",
   };
+
   const listExpertice = [
     "React.js, JavaScript ES6+, HTML5, CSS3",
     "Responsive design & cross-browser compatibility",
@@ -44,16 +45,15 @@ export const Home = () => {
               <p>hello,</p>
               <p className="my-name-txt">
                 <TypeIt>
-                  My name is {""}
+                  Hi, It's me {""}
                   <SuperStrong>Rosario</SuperStrong>
                 </TypeIt>
               </p>
             </div>
             <div className="brief-intro">
               <p>
-                In my spare time, I’m usually climbing, reading, hanging out, or
-                running on the outskirts. I’m enamored with creating intuitive
-                interfaces where design meets seamless code.
+                I’m enamored with creating intuitive interfaces where design
+                meets seamless code.
               </p>
             </div>
             <div className="picture-of-me">
@@ -71,68 +71,67 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div className="div-touch-files-1">
-          <div className="arriba">
-            <div className="grid-about-me">
-              <div className="introduction-g1">
-                <h3>Front-End development based in Veracruz, México</h3>
-                <p>
-                  Front-End developer with a background in Software Engineering
-                  and a user-centered mindset. I build clean,{" "}
-                  <span style={strong}>responsive</span>, and functional{" "}
-                  <span style={strong}>web solutions</span> using modern
-                  technologies like <span style={strong}>JavaScript</span>,{" "}
-                  <span style={strong}>React</span>, and
-                  <span style={strong}> Taildwind CSS</span>— ready to bring
-                  real value to any development team.
-                </p>
-              </div>
-              <div className="introduction-g2">
-                {/*  <img
-                    style={{ height: "130px", width: "200px" }}
-                    alt="doodle"
-                    src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2FOpen%20Doodles%20-%20Reading.png?alt=media&token=cd682543-e3e2-47a1-8caf-51627e802218"
-                    ></img> */}
-                <Titulo measure="70px"></Titulo>
-              </div>
+
+        <div className="div-touch-files">
+          <div className="grid-about-me">
+            <div className="introduction-g1">
+              <h3>Front-End development from México</h3>
+              <p>
+                with a background in Software Engineering and a user-centered
+                mindset. I build clean, <span style={strong}>responsive</span>,
+                and functional <span style={strong}>web applications</span>{" "}
+                using <span style={strong}>JS</span>,{" "}
+                <span style={strong}>React</span>, and
+                <span style={strong}> Taildwind CSS</span>
+              </p>
+            </div>
+            <div className="introduction-g2">
+              {/*  <img
+                            style={{ height: "130px", width: "200px" }}
+                            alt="doodle"
+                            src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2FOpen%20Doodles%20-%20Reading.png?alt=media&token=cd682543-e3e2-47a1-8caf-51627e802218"
+                            ></img> */}
+              <Titulo measure="60px"></Titulo>
+            </div>
+          </div>
+          <div className="div-files">
+            <div>
+              <p>Explore my professional experience in the links below.</p>
+            </div>
+            <div className="flex-carpets">
+              <Folder
+                linkMedia={
+                  "https://www.linkedin.com/in/bornsrss/details/certifications/"
+                }
+                label="LinkedIn"
+                color="var(--azul-pastel)"
+              />
+              <Folder
+                linkMedia={"https://github.com/bornsrss14"}
+                label="GitHub"
+                color="var(--azul-pastel)"
+              />
+              <Folder
+                linkMedia={
+                  "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fcv-rosariofuentes.pdf?alt=media&token=0ea89b39-fc83-4ca3-96dc-1c306e6aa87d"
+                }
+                label="Download CV"
+                color="var(--azul-pastel)"
+              />
+
+              <Link to={"/ui-components"}>
+                <Folder
+                  label="UI Components"
+                  color="var(--azul-pastel)"
+                ></Folder>
+              </Link>
             </div>
           </div>
         </div>
-        <div className="div-touch-files">
-          <div>
-            <SectionSubtitle txtSubtitle={"Let's create!"} />
-            <p>
-              Explore my professional experience and check out my CV in the
-              links below.
-            </p>
-            <p>Currently available for on-site and remote work</p>
-          </div>
-          <div className="flex-carpets">
-            <Folder
-              linkMedia={
-                "https://www.linkedin.com/in/bornsrss/details/certifications/"
-              }
-              label="LinkedIn"
-              color="#F7B500"
-            />
-            <Folder
-              linkMedia={"https://github.com/bornsrss14"}
-              label="GitHub"
-              color="#F7B500"
-            />
-            <Folder
-              linkMedia={
-                "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fcv-rosariofuentes.pdf?alt=media&token=0ea89b39-fc83-4ca3-96dc-1c306e6aa87d"
-              }
-              label="Download my CV"
-              color="#F7B500"
-            />
-
-            <Link to={"/ui-components"}>
-              <Folder label="UI Components" color="#F7B500"></Folder>
-            </Link>
-          </div>
-        </div>
+      </section>
+      <section className="personal-projects-section">
+        <h2 className="font-sub-titles">Personal projects</h2>
+        <p>Here are some personal projects I've been working lately</p>
       </section>
 
       <section className="grid-section-projects">

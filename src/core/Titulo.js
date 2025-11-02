@@ -22,7 +22,8 @@ export const Titulo = ({ measure = "130px" }) => {
         </div>
         <h3 className="name-rosario"> Rosario Fuentes García</h3>
         <p className=" typeWork-txt">
-          Ing. de Software <span> | Universidad Veracruz</span>{" "}
+          <span>Ing. de Software </span>
+          <span> UV</span>{" "}
         </p>
 
         <div className="redes-sociales">

@@ -18,11 +18,11 @@ const PortfolioFolderLayout = () => {
 
   return (
     <>
-      <div className="card">
+      {/* <div className="card">
         <div className="cubierta-blanca"></div>
 
         <h2 className="font-sub-titles">
-          {activeTab ? activeItem.projectTitle : "Ros's Classified File."}
+          {activeTab ? activeItem.projectTitle : "Personal projects"}
         </h2>
         <button className="card-white"></button>
 
@@ -48,14 +48,48 @@ const PortfolioFolderLayout = () => {
               ) : (
                 <DefaultCard />
               )}
+            </>
+          }
+        </div>
+      </div> */}
+      <div className="folder-f">
+        <div className="folder-back-f">
+          <div className="cubierta-blanca"></div>
+          <div className="tabs">
+            {tabs.map((tab, index) => (
+              <button
+                key={tab.id}
+                className={`tab ${tab.className} ${
+                  activeTab === tab.id
+                    ? "estiloBotonActivo"
+                    : "estiloBotonNormal"
+                }`}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-              {/*  {DataProjects.map((item) =>
+          <div className="folder-front-f">
+            <div className="content">
+              {
+                <>
+                  {activeItem ? (
+                    <CardContent key={activeItem.id} item={activeItem} />
+                  ) : (
+                    <DefaultCard />
+                  )}
+
+                  {/*  {DataProjects.map((item) =>
                 item.id === activeTab ? (
                   <CardContent key={item.id} item={item} />
                 ) : null
               )} */}
-            </>
-          }
+                </>
+              }
+            </div>
+          </div>
         </div>
       </div>
     </>

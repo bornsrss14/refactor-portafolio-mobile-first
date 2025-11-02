@@ -1,8 +1,4 @@
-const Folder = ({
-  linkMedia,
-  label = "Proyecto",
-  color = " rgb(255, 187, 0)",
-}) => {
+const Folder = ({ linkMedia, label = "Proyecto", color }) => {
   const style = { backgroundColor: color, color: "white" };
   return (
     <a className="slide-top" target="_blank" rel="noreferrer" href={linkMedia}>

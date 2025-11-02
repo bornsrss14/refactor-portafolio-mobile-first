@@ -2,8 +2,13 @@ import { IconFlareFilled } from "@tabler/icons-react";
 import MasonryGallery from "../components/MasonryGallery";
 import BtnClassic from "../core/BtnClassic";
 import Footer from "../components/Footer";
+import Titulo from "../core/Titulo";
 
 export const AboutMe = () => {
+  const strong = {
+    fontWeight: "500",
+    color: "rgb(84, 84, 84)",
+  };
   return (
     <>
       <main id="main-grid-about" className="extra-margin">
