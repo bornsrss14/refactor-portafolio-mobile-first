@@ -30,8 +30,14 @@ const DataProjects = [
   {
     id: 1001,
     projectTitle: "MUBI:: Rate movies and share reviews",
-    briefDescription:
-      "This is the next project i have been working, so it is not full coded, i'll be exited to share with you the final product, so, stay tuned!",
+    briefDescription: (
+      <p>
+        My latest project: A social network web app to{" "}
+        <strong>review movies </strong>and series, create watch list, save
+        favorites and <strong>interact with other users </strong> in comment
+        sections in each review. It's not full coded, please, stay tune!
+      </p>
+    ),
     url_video: "",
     firstScreenShot:
       "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2FCaptura%20de%20pantalla%202025-10-30%20-%2002.20.17.png?alt=media&token=36c1a189-5c94-42b4-b886-d40e0b07d815",

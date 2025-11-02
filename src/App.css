@@ -1923,8 +1923,8 @@ desktop
   }
 
   .folder {
-    width: 8rem;
-    min-width: 8rem;
+    width: 7rem;
+    min-width: 7rem;
     height: 5rem;
     border-radius: 7px;
     box-shadow: 0 8px 14px rgba(121, 121, 121, 0.181);
