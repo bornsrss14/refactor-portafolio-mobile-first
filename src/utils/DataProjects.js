@@ -34,9 +34,9 @@ const DataProjects = [
       "This is the next project i have been working, so it is not full coded, i'll be exited to share with you the final product, so, stay tuned!",
     url_video: "",
     firstScreenShot:
-      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2F_captura-segundo-mubi.png?alt=media&token=9161cefe-9647-4da3-8672-de2347244adf",
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2FCaptura%20de%20pantalla%202025-10-30%20-%2002.20.17.png?alt=media&token=36c1a189-5c94-42b4-b886-d40e0b07d815",
     secondScreenShot:
-      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2F_captura_primera_mubi.png?alt=media&token=f70b0c9c-c2d4-4cd5-8bb8-47ef7b8d9228",
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2F_segunda_captura_mubi.png?alt=media&token=58422658-4ee2-44ed-be59-025109e6fcf8",
     gitRepo: "https://github.com/bornsrss14/mubi_pandas",
     liveDemo: "https://mubipandas.rosfuentes.dev/",
   },
