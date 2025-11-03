@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
 import LogoScalable from "../core/LogoScalable";
-import { IconMoonFilled, IconLanguageHiragana } from "@tabler/icons-react";
-
-/* import LanguageToggle from "../core/LanguageToggle"; */
-
+import { useThemeT } from "../contexts/ThemeContext";
 import { useState } from "react";
+import {
+  IconMoonFilled,
+  IconLanguageHiragana,
+  IconSun,
+} from "@tabler/icons-react";
 
 export const Navbar = ({ handleScrollTop }) => {
+  const { isDark, dark, light, toggleTheme } = useThemeT();
+  const theme = isDark
+    ? dark
+    : light; /*La variable para iniciar los temas y acceder a theme.txt, theme.ui, theme.bg */
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleOpenClose = () => {
@@ -17,36 +23,14 @@ export const Navbar = ({ handleScrollTop }) => {
     setIsMenuOpen(false);
   };
 
-  /* 
-  const languajes = [
-    {
-      idiom: "EN",
-      flag: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg",
-    },
-    {
-      idiom: "ES",
-      flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/330px-Flag_of_Mexico.svg.png",
-    },
-  ]; */
-
-  /* const [languaje] = useState(languajes[0]); */
-
-  /*
-  const toggleLanguaje = () => {
-    setLanguaje((prev) => (prev.idiom === "EN" ? languajes[1] : languajes[0]));
-  };
-  */
-
-  /* const viceversa = languaje.idiom === "EN" ? languajes[1] : languajes[0]; */
-
   return (
     <>
-      <div className="div-navbar">
+      <div style={{ background: theme.bg }} className="div-navbar">
         <header className="header-desktop">
           <Link onClick={() => closeMenu()} to={"/"}>
             <div className="flex-row">
-              <h3 className="txt-logo-desktop">
-                <span className="blue-primary">panda</span>
+              <h3 style={{ color: theme.txt }} className="txt-logo-desktop">
+                <span style={{ color: theme.txt_logo }}>panda</span>
                 sneezing
               </h3>
               <LogoScalable
@@ -77,28 +61,48 @@ export const Navbar = ({ handleScrollTop }) => {
           <ul className="menu-list">
             {/*flex-row-navbar */}
             <li onClick={() => closeMenu()} className="menu-item-nav">
-              <a className="menu-link-nav" href="#myResumen">
+              <a
+                style={{ color: theme.txt }}
+                className="menu-link-nav"
+                href="#myResumen"
+              >
                 Resume
               </a>
             </li>
             <li onClick={() => closeMenu()} className="menu-item-nav">
-              <Link className="menu-link-nav" to={"/about-me"}>
+              <Link
+                style={{ color: theme.txt }}
+                className="menu-link-nav"
+                to={"/about-me"}
+              >
                 About me
               </Link>
             </li>
             <li onClick={() => closeMenu()} className="menu-item-nav">
-              <Link className="menu-link-nav" to={"/blog"}>
+              <Link
+                style={{ color: theme.txt }}
+                className="menu-link-nav"
+                to={"/blog"}
+              >
                 Articles
               </Link>
             </li>
             <li onClick={() => closeMenu()} className="menu-item-nav">
-              <Link className="menu-link-nav" to={"/contact"}>
+              <Link
+                style={{ color: theme.txt }}
+                className="menu-link-nav"
+                to={"/contact"}
+              >
                 Contact
               </Link>
             </li>
             <li
-              style={{ padding: "8px 14px", cursor: "pointer" }}
-              onClick={console.log("Esto es de noche")}
+              style={{
+                padding: "8px 14px",
+                cursor: "pointer",
+                color: theme.txt,
+              }}
+              onClick={console.log("Esto es de español")}
               className="menu-item-nav"
             >
               <IconLanguageHiragana
@@ -106,25 +110,17 @@ export const Navbar = ({ handleScrollTop }) => {
                 stroke={"1.4px"}
               ></IconLanguageHiragana>
             </li>
-
             <li
               style={{ padding: "8px 14px", cursor: "pointer" }}
-              onClick={console.log("Esto es de noche")}
+              onClick={() => toggleTheme()}
               className="menu-item-nav"
             >
-              <IconMoonFilled size={"18.7px"}></IconMoonFilled>
+              {!isDark ? (
+                <IconMoonFilled color="black" size={"18.7px"}></IconMoonFilled>
+              ) : (
+                <IconSun color={"yellow"} size={"18.7px"}></IconSun>
+              )}
             </li>
-            {/*   <li onClick={() => closeMenu()} className="menu-item-nav">
-              <div className="flex-row-nav">
-                <p>{viceversa.idiom}</p>
-                <LogoScalable
-                  imagenImg={viceversa.flag}
-                  customHeight={"1.3rem"}
-                  customWidth={"1.3rem"}
-                />
-                <IconChevronDown />
-              </div>
-            </li> */}
           </ul>
         </div>
       </div>

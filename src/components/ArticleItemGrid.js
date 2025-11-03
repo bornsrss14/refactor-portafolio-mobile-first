@@ -1,8 +1,14 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { OptimizedImage } from "../hooks/useOptimizedImage";
+import { useThemeT } from "../contexts/ThemeContext";
 export const ArticleItemGrid = ({ item }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
-    <div className="full-article-container-grid">
+    <div
+      style={{ background: theme.ui, color: theme.txt }}
+      className="full-article-container-grid"
+    >
       <div className="date-article">
         <p style={{ fontSize: "1.4rem" }}>{item.dateMonth}</p>
         <p style={{ fontSize: "1.4rem", fontWeight: "700" }}>

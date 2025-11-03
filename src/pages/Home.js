@@ -12,6 +12,7 @@ import Titulo from "../core/Titulo";
 import { SectionSubtitle } from "../core/SectionSubtitle";
 import { Link } from "react-router-dom";
 import { OptimizedImage } from "../hooks/useOptimizedImage";
+import { useThemeT } from "../contexts/ThemeContext";
 
 export const Home = () => {
   const SuperStrong = ({ children }) => (
@@ -36,13 +37,15 @@ export const Home = () => {
     "Basic SEO best practices",
     "DB: MySQL (familiar with queries and structure) ",
   ];
+
+  const { isDark, light, dark } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <>
       <section className="about-me extra-margin">
         <div className="grid-photo-introduction">
           <div className="photo">
             <div>
-              <p>hello,</p>
               <p className="my-name-txt">
                 <TypeIt>
                   Hi, It's me {""}
@@ -72,8 +75,11 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="div-touch-files">
-          <div className="grid-about-me">
+        <div
+          style={{ background: theme.ui, color: theme.txt }}
+          className="div-touch-files"
+        >
+          <div style={{ background: theme.bg }} className="grid-about-me">
             <div className="introduction-g1">
               <h3>Front-End development from México</h3>
               <p>
@@ -130,34 +136,56 @@ export const Home = () => {
         </div>
       </section>
       <section className="personal-projects-section">
-        <h2 className="font-sub-titles">Personal projects</h2>
-        <p>Here are some personal projects I've been working lately</p>
+        <h2 style={{ color: theme.txt }} className="font-sub-titles">
+          Personal projects
+        </h2>
+        <p style={{ color: theme.txt }}>
+          Here are some personal projects I've been working lately
+        </p>
       </section>
 
-      <section className="grid-section-projects">
+      <section
+        style={{ background: theme.bgExperience }}
+        className="grid-section-projects"
+      >
         <div className="container-arrow-hash-none container-arrow-hash ">
           <div>
-            <IconArrowLeft size={"14rem"} className="arrow" />
+            <IconArrowLeft color={theme.txt} size={"14rem"} className="arrow" />
           </div>
-          <div>
-            <div className="flex-hash">
+          <div style={{ color: theme.txt }}>
+            <div
+              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+              className="flex-hash"
+            >
               <p>#HTML</p>
               <p>#CSS</p>
             </div>
-            <div className="flex-hash">
+            <div
+              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+              className="flex-hash"
+            >
               <p>#JavaScript</p>
               <p>#React</p>
             </div>
-            <div className="flex-hash">
+            <div
+              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+              className="flex-hash"
+            >
               <p>#MySQL</p>
               <p>#NodeJs</p>
             </div>
-            <div className="flex-hash">
+            <div
+              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+              className="flex-hash"
+            >
               <p>#Figma</p>
               <p>#ContextAPI</p>
               <p>#Hooks</p>
             </div>
-            <div className="flex-hash">
+            <div
+              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+              className="flex-hash"
+            >
               <p>#TypeScript</p>
               <p>#Taildwind</p>
               <p>#MongoDB</p>
@@ -167,7 +195,7 @@ export const Home = () => {
         <PortfolioFolderLayout />
       </section>
       <section className="grid-experience">
-        <div className="item">
+        <div style={{ background: theme.bgExperience }} className="item">
           <div id="myResumen"></div>
           <SectionSubtitle txtSubtitle={"Experience"} />
           <div className="content-true-false">
@@ -194,10 +222,10 @@ export const Home = () => {
             />
           </div>
         </div>
-        <div className="item">
+        <div style={{ background: theme.bgExperience }} className="item">
           <SectionSubtitle txtSubtitle={"Expertice"} />
 
-          <ul>
+          <ul style={{ color: theme.txt }}>
             {listExpertice.map((ex, inx) => {
               return <li key={inx}>{`${inx + 1}. ${ex}`}</li>;
             })}
@@ -207,32 +235,38 @@ export const Home = () => {
           <SectionSubtitle txtSubtitle={"Hardskill"} />
 
           <div>
-            <BtnClassic color="blue" btnText={"React"}></BtnClassic>
+            <BtnClassic color={theme.tags} btnText={"React"}></BtnClassic>
             <BtnClassic color="white" btnText={"HTML"}></BtnClassic>
-            <BtnClassic color="blue" btnText={"JavaScript"}></BtnClassic>
-            <BtnClassic color="blue" btnText={"tailwind css"}></BtnClassic>
+            <BtnClassic color={theme.tags} btnText={"JavaScript"}></BtnClassic>
+            <BtnClassic
+              color={theme.tags}
+              btnText={"tailwind css"}
+            ></BtnClassic>
             <BtnClassic color="white" btnText={"NodeJs"}></BtnClassic>
             <BtnClassic color="white" btnText={"MongoDB"}></BtnClassic>
             <BtnClassic color="white" btnText={"TypeScript"}></BtnClassic>
             <BtnClassic color="white" btnText={"HTML"}></BtnClassic>
-            <BtnClassic color="blue" btnText={"MySQL"}></BtnClassic>
+            <BtnClassic color={theme.tags} btnText={"MySQL"}></BtnClassic>
           </div>
           <div className="line-full-2"></div>
 
           <SectionSubtitle txtSubtitle={"Softskill"} />
           <div>
-            <BtnClassic color="blue" btnText={"#Creativity"}></BtnClassic>
+            <BtnClassic color={theme.tags} btnText={"#Creativity"}></BtnClassic>
             <BtnClassic color="white" btnText={"#TimeManagment"}></BtnClassic>
-            <BtnClassic color="blue" btnText={"#TeamWork"}></BtnClassic>
+            <BtnClassic color={theme.tags} btnText={"#TeamWork"}></BtnClassic>
             <BtnClassic color="white" btnText={"#Communication"}></BtnClassic>
-            <BtnClassic color="blue" btnText={"#AgileEnvironment"}></BtnClassic>
             <BtnClassic
-              color="blue"
+              color={theme.tags}
+              btnText={"#AgileEnvironment"}
+            ></BtnClassic>
+            <BtnClassic
+              color={theme.tags}
               btnText={"#TeamCollaboration"}
             ></BtnClassic>
           </div>
         </div>
-        <div className="item">
+        <div style={{ background: theme.bgExperience }} className="item">
           <SectionSubtitle txtSubtitle={"Education"} />
           <EducationItem
             course={false}
@@ -268,7 +302,7 @@ export const Home = () => {
           />
         </div>
       </section>
-      <footer className="footer">
+      <footer style={{ background: theme.txt_logo }} className="footer">
         <Footer></Footer>
       </footer>
     </>

@@ -2,13 +2,20 @@ import { IconFlareFilled } from "@tabler/icons-react";
 import MasonryGallery from "../components/MasonryGallery";
 import BtnClassic from "../core/BtnClassic";
 import Footer from "../components/Footer";
+import { useThemeT } from "../contexts/ThemeContext";
 
 export const AboutMe = () => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <>
-      <main id="main-grid-about" className="extra-margin">
+      <main
+        style={{ background: theme.bgMansory, color: theme.txt }}
+        id="main-grid-about"
+        className="extra-margin"
+      >
         <section className="sec-txt item-about">
-          <h1 className="message-footer-bye">
+          <h1 style={{ color: theme.txt_logo }} className="message-footer-bye">
             <span>
               Inspiration
               <IconFlareFilled />

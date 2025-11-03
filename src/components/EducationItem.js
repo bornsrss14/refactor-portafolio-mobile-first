@@ -1,4 +1,5 @@
 import { IconSchool, IconRosetteDiscountCheck } from "@tabler/icons-react";
+import { useThemeT } from "../contexts/ThemeContext";
 
 export const EducationItem = ({
   date = "2018 -2025",
@@ -7,9 +8,17 @@ export const EducationItem = ({
   course = true,
   linkCertified = "klsd",
 }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <>
-      <div className="div-education">
+      <div
+        style={{
+          color: theme.txt,
+          background: theme.uiEduExp,
+        }}
+        className="div-education"
+      >
         <a
           target="_blank"
           href={linkCertified}
@@ -21,9 +30,9 @@ export const EducationItem = ({
             <button className="btn-clasic-blue">{date}</button>
             <div className="icon">
               {course ? (
-                <IconRosetteDiscountCheck color="white" size={"24px"} />
+                <IconRosetteDiscountCheck color={theme.txt} size={"24px"} />
               ) : (
-                <IconSchool color="white" size={"24px"} />
+                <IconSchool color={theme.txt} size={"24px"} />
               )}
             </div>
           </div>

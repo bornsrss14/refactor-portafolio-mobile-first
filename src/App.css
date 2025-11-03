@@ -18,12 +18,23 @@
   --c-primary-blue: rgb(0, 0, 173);
   --color-hover-blue: #69b4e6;
   --purple-pastel: #9a7fed;
-  --azul-pastel: #a6d3ff;
+
   --cyan: rgb(0, 194, 203);
   --aqua-pastel: #9bdcc4;
   --orange: rgb(255, 107, 53);
   --white-dark: #f8f9ff;
   --primary-white: #fff;
+  --primary-white-txt: #e3e3e3f8;
+
+  /*Dark mode*/
+  --night-bg: #21242e;
+  --raisin-black-light: rgb(46, 46, 50);
+
+  /*FOLDERS*/
+  --azul-pastel: #a6d3ff; /*frente*/
+  --azul-pastel-dark: #b6daff; /*back*/
+  --color-dark-folder-front: #3c6d9d;
+  --color-dark-folder-back: #517599;
 }
 
 .extra-margin {
@@ -87,7 +98,6 @@ header {
 .full-article-container {
   display: grid;
   grid-template-columns: 4rem 1fr;
-  background-color: var(--primary-white);
   width: 90%;
   gap: 1rem;
   margin: 2rem auto;
@@ -262,7 +272,7 @@ no es necesario
 .footer-content {
   margin: 2rem auto;
   width: 100%;
-  background-color: var(--white-dark);
+  /* background-color: var(--white-dark); */
   position: relative;
 }
 .up {
@@ -270,12 +280,12 @@ no es necesario
   min-width: 100%;
   text-align: center;
   margin: 0rem auto 1rem;
-  background-color: var(--white-dark);
+  /* background-color: var(--white-dark); */
   cursor: pointer;
 }
 .message-footer-bye {
   font-size: 3rem;
-  color: var(--c-primary-blue);
+  /* color: var(--c-primary-blue); */
 }
 .message-footer {
   font-size: 3rem;
@@ -305,9 +315,7 @@ no es necesario
   max-width: 100%;
   height: auto;
   margin: 1rem auto;
-  background: #fff5d6;
-  background: -webkit-linear-gradient(to right, #ffffff, #fff8e1);
-  background: linear-gradient(to right, #ffffff, #fffbee);
+  /* background: #fff5d6; */
 }
 .item-about {
   padding: 1rem;
@@ -357,7 +365,7 @@ no es necesario
   font-weight: 400;
 }
 .menu-link-nav {
-  color: rgb(4, 4, 30);
+  /* color: rgb(4, 4, 30); */
   text-decoration: none;
   font-size: 1.1rem;
   display: block;
@@ -492,10 +500,9 @@ desktop
 }
 /* Experience Items */
 .itemContainerExperience {
-  border: solid 1px rgba(0, 0, 255, 0.238);
+  /* border: solid 1px rgba(0, 0, 255, 0.238); */
   border-radius: 15px;
   min-width: 15rem;
-  background-color: var(--white-dark);
   max-width: 100%;
   height: auto;
   padding: 1.5rem 2.3rem;
@@ -512,11 +519,10 @@ desktop
   gap: 0.23rem;
 }
 .div-education {
-  border: solid 1px rgba(0, 0, 255, 0.238);
+  /* border: solid 1px rgba(0, 0, 255, 0.238); */
   border-radius: 15px;
   min-width: 15rem;
-  color: white;
-  background-color: var(--c-primary-blue);
+  /* background-color: var(--c-primary-blue); */
   max-width: 100%;
   height: auto;
   padding: 1rem 1.4rem;
@@ -614,8 +620,26 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 350; /* peso ligero */
   font-size: 17px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.dark-theme {
+  background-color: var(--night-bg);
+}
+body.light-theme {
   background-color: var(--white-dark);
 }
+
+/* Tema CLARO */
+body.light-theme .folder-back-f::before {
+  background-color: var(--azul-pastel);
+  /* otros estilos... */
+}
+
+/* Tema OSCURO */
+body.dark-theme .folder-back-f::before {
+  background: var(--color-dark-folder-back);
+}
+
 a {
   list-style: none;
   text-decoration: none;
@@ -741,7 +765,6 @@ desktop
   border-radius: 8px;
   box-shadow: 0 8px 14px rgba(121, 121, 121, 0.15);
   position: relative;
-  background-color: #facc15;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -758,7 +781,7 @@ desktop
   clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background: #b6daff;
+  /* background: var(--azul-pastel-dark); */
   box-shadow: inset 0 -1px 2.4px rgba(75, 101, 216, 0.296);
 }
 .folder-label {
@@ -859,8 +882,9 @@ desktop
   justify-content: end;
   align-items: end;
   font-size: 1.3rem;
-  border-bottom: 1px solid rgb(5, 5, 79);
+
   padding-bottom: 0.8rem;
+  /* color: red; */
 }
 .search {
   justify-self: center;
@@ -921,6 +945,7 @@ desktop
 
 .item {
   padding: 2rem 1.5rem;
+  border-radius: 25px;
 }
 .container-video-tutorial {
   width: 100%;
@@ -1119,15 +1144,12 @@ desktop
   overflow-x: hidden;
 } */
 
-.div-education > p {
-  color: white;
-}
-
 .footer {
   min-width: 100%;
   height: 20rem;
-  /* background-color: rgb(5, 5, 79); */
+  /* background-color: rgb(5, 5, 79);
   background-color: var(--c-primary-blue);
+   */
 }
 
 .arrow {
@@ -1148,7 +1170,7 @@ desktop
 
 .container-message p {
   font-size: 1.1rem;
-  color: var(--c-primary-blue);
+  /* color: var(--c-primary-blue); */
 }
 
 .abs-icon-1 {
@@ -1513,12 +1535,13 @@ desktop
     max-width: 90%;
     margin: 0.6rem auto 1rem;
     text-align: center;
+    padding: 0.4rem 1rem;
   }
   .personal-projects-section h2 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #000;
+    /* color: #000; */
   }
 
   .personal-projects-section p {
@@ -1535,7 +1558,7 @@ desktop
     position: relative;
     width: 100%;
     height: 100%;
-    background: #b6daff;
+    /* background: var(--azul-pastel-dark); */
     border-radius: 0 14px 14px 14px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
@@ -1545,7 +1568,7 @@ desktop
     top: -25px;
     width: 194px;
     height: 28px;
-    background: #b6daff;
+    background: var(--azul-pastel-dark);
     border-radius: 8px 8px 0 0;
   }
   .folder-front-f {
@@ -1554,7 +1577,7 @@ desktop
     left: 0;
     width: 100%;
     height: 29rem;
-    background: var(--azul-pastel);
+    /* background: var(--azul-pastel); */
     border-radius: 0 10px 10px 10px;
     border-top: 2px solid rgba(82, 85, 110, 0.09);
     z-index: 2;
@@ -1648,7 +1671,7 @@ desktop
     gap: 1rem;
     max-width: 85%;
     margin: 1rem auto;
-    background: var(--primary-white);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
   .flex-row-navbar {
     display: flex;
@@ -1680,7 +1703,7 @@ desktop
     left: 0;
     width: 100%; /* Ocupa todo el ancho del padre*/
     height: 24px;
-    background: #b6daff;
+    /* background: var(--azul-pastel-dark); */
     z-index: 1;
   }
   .container-arrow-hash {
@@ -1694,18 +1717,18 @@ desktop
     max-width: 90%;
     margin: 0 auto;
     grid-template-columns: minmax(17rem, 21rem) minmax(0, 1fr);
-    background-color: var(--primary-white);
+    /* background-color: var(--primary-white); */
     justify-items: center;
     align-items: center;
     padding: 1rem 0 1rem 0rem;
     gap: 1.5rem;
+    border-radius: 25px;
   }
   .grid-about-me {
     padding: 1rem 3rem;
     grid-template-columns: 1fr 10rem;
     place-items: center;
     gap: 2rem;
-    border: 2px solid var(--white-dark);
     border-radius: 14px;
     width: 44rem;
   }
@@ -1739,7 +1762,7 @@ desktop
     left: 0; /* pegado al borde izquierdo del padre */
     width: 235px;
     height: 2rem;
-    background: #b6daff;
+    background: var(--azul-pastel-dark);
     box-shadow: inset 0 -1px 2.4px rgba(75, 101, 216, 0.531);
     padding: 10px 20px;
     clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
@@ -1765,15 +1788,13 @@ desktop
     height: auto;
     padding: 1rem 2rem;
   }
-  .grid-experience > * {
-    background-color: var(--primary-white);
-  }
+
   .itemContainerExperience {
     max-width: 93%;
     margin: 0.7rem auto;
     padding: 1rem 1.8rem;
     height: fit-content;
-    background-color: var(--primary-white);
+    /* background-color: var(--primary-white); */
   }
   .full-article-container:hover,
   desktop .full-article-container-grid:hover {
@@ -1782,9 +1803,8 @@ desktop
   .full-article-container {
     display: grid;
     grid-template-columns: 10rem 1fr 1fr;
-    border-top: 1px solid rgb(167, 167, 167);
+    /* border-top: 1px solid rgb(167, 167, 167); */
     max-width: 80%;
-    background-color: var(--primary-white);
     gap: 2rem;
     height: fit-content;
     padding: 3rem 1rem;
@@ -1835,7 +1855,7 @@ desktop
   .footer-content {
     margin: 2rem auto;
     width: 80%;
-    background-color: var(--white-dark);
+    /* background-color: var(--white-dark); */
     position: relative;
   }
 
@@ -1885,10 +1905,11 @@ desktop
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: var(--primary-white);
+    /* background-color: var(--primary-white); */
     margin: 1rem auto;
     padding: 1rem;
     gap: 1rem;
+    border-radius: 19px;
   }
   .flex-carpets {
     margin: 1.4rem 1rem 1rem 0rem;
@@ -2045,5 +2066,5 @@ desktop
 
 .name-rosario {
   font-size: 0.8rem;
-  color: var(--c-primary-blue);
+  /* color: var(--c-primary-blue); */
 }

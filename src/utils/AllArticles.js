@@ -421,16 +421,16 @@ export const allMainArticles = [
   },
   {
     id: 102,
-    title: "Promises in Java Script as in real life",
-    subtitle: "The day i exposed my secret keys in Git, and how did it solve.",
-    dateMonth: "AGU",
-    dateNumber: 17,
-    minutesRead: 10,
-    categories: ["Web Development", "JavaScript", "UX"],
+    title: "React Context & Provider Hooks",
+    subtitle: "Toggle Dark/light mode with context Provider and custom hook ",
+    dateMonth: "NOV",
+    dateNumber: 2,
+    minutesRead: 19,
+    categories: ["Web Development", "React", "Context API"],
     banner:
-      "https://cdn-media-0.freecodecamp.org/2020/06/Ekran-Resmi-2020-06-06-12.21.27.png",
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fdark_mode_captura.png?alt=media&token=4abb9bc5-58fc-4272-aebe-e14c077e53f4",
     articleImg:
-      "https://cdn-media-0.freecodecamp.org/2020/06/Ekran-Resmi-2020-06-06-12.21.27.png",
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fdark_mode_captura.png?alt=media&token=4abb9bc5-58fc-4272-aebe-e14c077e53f4",
     balazoArticleImg:
       "Detail: adjunto captura de la advertencia hecha por gitGardian",
     content:

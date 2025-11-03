@@ -2,6 +2,7 @@ import { useState } from "react";
 import CardContent from "./CardContent";
 import DataProjects from "../utils/DataProjects";
 import DefaultCard from "./DefaultCard";
+import { useThemeT } from "../contexts/ThemeContext";
 
 const tabs = [
   { id: 1001, label: "MUBI::", className: "blue" },
@@ -16,6 +17,8 @@ const PortfolioFolderLayout = () => {
   const [activeTab, setActiveTab] = useState(0);
   const activeItem = DataProjects.find((item) => item.id === activeTab);
 
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <>
       {/* <div className="card">
@@ -53,8 +56,11 @@ const PortfolioFolderLayout = () => {
         </div>
       </div> */}
       <div className="folder-f">
-        <div className="folder-back-f">
-          <div className="cubierta-blanca"></div>
+        <div style={{ background: theme.folderBack }} className="folder-back-f">
+          <div
+            style={{ background: theme.folderBack }}
+            className="cubierta-blanca"
+          ></div>
           <div className="tabs">
             {tabs.map((tab, index) => (
               <button
@@ -71,7 +77,10 @@ const PortfolioFolderLayout = () => {
             ))}
           </div>
 
-          <div className="folder-front-f">
+          <div
+            style={{ background: theme.folderFront }}
+            className="folder-front-f"
+          >
             <div className="content">
               {
                 <>

@@ -1,5 +1,6 @@
 import { IconBriefcaseFilled } from "@tabler/icons-react";
 import React from "react";
+import { useThemeT } from "../contexts/ThemeContext";
 
 export const ExperienceItem = ({
   typeWork = "none",
@@ -8,13 +9,22 @@ export const ExperienceItem = ({
   endDate = "now",
   yearWork,
 }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <>
-      <div className="itemContainerExperience">
+      <div
+        style={{
+          color: theme.txt,
+          background: theme.uiEduExp,
+          border: `1px solid ${theme.txt_logo}`,
+        }}
+        className="itemContainerExperience"
+      >
         <div className="years">
           <button className="btn-clasic-blue">{yearWork}</button>
           <div className="icon">
-            <IconBriefcaseFilled color="gray" size={"24px"} />
+            <IconBriefcaseFilled color={theme.txt} size={"24px"} />
           </div>
         </div>
         <div className="title">

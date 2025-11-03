@@ -1,9 +1,14 @@
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { OptimizedImage } from "../hooks/useOptimizedImage";
+import { useThemeT } from "../contexts/ThemeContext";
 export const ArticleItemList = ({ item }) => {
-  console.log(item, "Este es mi item y la imagen es", item.articleImg);
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
-    <div className="full-article-container">
+    <div
+      style={{ background: theme.ui, color: theme.txt }}
+      className="full-article-container"
+    >
       <div className="date-article">
         <p className="txt-month">{item.dateMonth}</p>
         <div>-</div>
@@ -23,14 +28,23 @@ export const ArticleItemList = ({ item }) => {
       <div style={{ width: "100%" }} className="">
         <div className="article-detailes">
           <h3
-            style={{ color: "var(--c-primary-blue)" }}
+            style={{
+              color: theme.txt_logo,
+              fontWeight: `${isDark}` ? 700 : 500,
+            }}
             className="txt-h3-mobile"
           >
             {item.title}
           </h3>
           <p>{item.subtitle}</p>
           <p>{`${item.minutesRead} min read`}</p>
-          <div style={{ color: "var(--c-primary-blue)" }} className="flex-row">
+          <div
+            style={{
+              color: theme.txt_logo,
+              fontWeight: `${isDark}` ? 700 : 500,
+            }}
+            className="flex-row"
+          >
             {item.categories.map((cat, key) => {
               return (
                 <p className="hidden-mobile" key={`${item}key`}>

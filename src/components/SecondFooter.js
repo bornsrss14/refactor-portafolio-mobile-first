@@ -1,7 +1,10 @@
+import { useThemeT } from "../contexts/ThemeContext";
 import LogoScalable from "../core/LogoScalable";
 import SocialMediaIcons from "./SocialMediaIcons";
 
 export const SecondFooter = () => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <>
       <section className="container-social-media ">
@@ -14,7 +17,7 @@ export const SecondFooter = () => {
             customWidth="30px"
           ></LogoScalable>
 
-          <p> 2025, made with love ♡ and React</p>
+          <p style={{ color: theme.txt }}> 2025, made with love ♡ and React</p>
         </div>
         <SocialMediaIcons />
       </section>

@@ -1,4 +1,5 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
+import { useThemeT } from "../contexts/ThemeContext";
 import { OptimizedImage } from "../hooks/useOptimizedImage";
 
 export const Titulo = ({ measure = "130px" }) => {
@@ -6,6 +7,9 @@ export const Titulo = ({ measure = "130px" }) => {
     width: measure,
     height: "auto",
   };
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
+
   return (
     <>
       <div className="main-container-titulo">
@@ -20,7 +24,10 @@ export const Titulo = ({ measure = "130px" }) => {
             }
           ></OptimizedImage>
         </div>
-        <h3 className="name-rosario"> Rosario Fuentes García</h3>
+        <h3 style={{ color: theme.txt_logo }} className="name-rosario">
+          {" "}
+          Rosario Fuentes García
+        </h3>
         <p className=" typeWork-txt">
           <span>Ing. de Software </span>
           <span> UV</span>{" "}
