@@ -13,7 +13,10 @@ export const DetailedArticle = () => {
   }
 
   return (
-    <div style={{ color: theme.txt }} className="container-article">
+    <div
+      style={{ background: theme.bgExperience, color: theme.txt }}
+      className="container-article"
+    >
       <DetailedObjectArticle objectItem={article} />
     </div>
   );

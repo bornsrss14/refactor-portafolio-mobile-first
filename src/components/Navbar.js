@@ -42,6 +42,40 @@ export const Navbar = ({ handleScrollTop }) => {
               ></LogoScalable>
             </div>
           </Link>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              width: "fitContent",
+            }}
+          >
+            {" "}
+            <div
+              style={{ padding: "8px 14px", cursor: "pointer" }}
+              onClick={() => toggleTheme()}
+              className="menu-item-nav"
+            >
+              {!isDark ? (
+                <IconMoonFilled color="black" size={"22px"}></IconMoonFilled>
+              ) : (
+                <IconSun color={"yellow"} size={"22px"}></IconSun>
+              )}
+            </div>
+            <div
+              style={{
+                padding: "8px 14px",
+                cursor: "pointer",
+                color: theme.txt,
+              }}
+              onClick={console.log("Esto es de español")}
+              className="menu-item-nav"
+            >
+              <IconLanguageHiragana
+                size={"22px"}
+                stroke={"1.4px"}
+              ></IconLanguageHiragana>
+            </div>
+          </div>
           <button
             aria-label="abrir menu"
             aria-expanded={isMenuOpen}
@@ -49,11 +83,21 @@ export const Navbar = ({ handleScrollTop }) => {
             className="burger-button"
             onClick={toggleOpenClose}
           >
-            <span className="burger-line"></span>
-            <span className="burger-line"></span>
-            <span className="burger-line"></span>
+            <span
+              style={{ background: theme.txt }}
+              className="burger-line"
+            ></span>
+            <span
+              style={{ background: theme.txt }}
+              className="burger-line"
+            ></span>
+            <span
+              style={{ background: theme.txt }}
+              className="burger-line"
+            ></span>
           </button>
         </header>
+
         <div
           id="main-menu"
           className={`menu-content${isMenuOpen ? "show" : ""}`}
@@ -95,31 +139,6 @@ export const Navbar = ({ handleScrollTop }) => {
               >
                 Contact
               </Link>
-            </li>
-            <li
-              style={{
-                padding: "8px 14px",
-                cursor: "pointer",
-                color: theme.txt,
-              }}
-              onClick={console.log("Esto es de español")}
-              className="menu-item-nav"
-            >
-              <IconLanguageHiragana
-                size={"18.7px"}
-                stroke={"1.4px"}
-              ></IconLanguageHiragana>
-            </li>
-            <li
-              style={{ padding: "8px 14px", cursor: "pointer" }}
-              onClick={() => toggleTheme()}
-              className="menu-item-nav"
-            >
-              {!isDark ? (
-                <IconMoonFilled color="black" size={"18.7px"}></IconMoonFilled>
-              ) : (
-                <IconSun color={"yellow"} size={"18.7px"}></IconSun>
-              )}
             </li>
           </ul>
         </div>

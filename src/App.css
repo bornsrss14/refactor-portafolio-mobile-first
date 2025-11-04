@@ -54,7 +54,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   background: white;
   border-radius: 0 0 12px 12px; /* opcional, solo abajo */
   box-shadow: 0 10px 30px rgba(31, 31, 31, 0.074);
@@ -1528,6 +1528,11 @@ desktop
 @media (min-width: 601px) and (max-width: 1024px) {
   /* estilos para tablets */
 }
+.header-desktop {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
 
 /* 💻 Desktop – 1024px to 1440px */
 @media (min-width: 1024px) {
@@ -1595,8 +1600,9 @@ desktop
   }
   .container-article {
     max-width: 100%;
-    width: 60%;
+    width: 70%;
     margin: 5rem auto;
+    padding: 2rem;
   }
   .sectionCodeSnippet {
     display: grid;
@@ -1866,12 +1872,19 @@ desktop
   .message-footer {
     font-size: 5rem;
   }
-  .div-navbar {
+  /* .div-navbar {
     display: flex;
     padding: 1rem 3.5rem;
     flex-direction: row;
-
     justify-content: space-between;
+    align-items: center;
+  } */
+
+  .div-navbar {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr auto;
+    margin: 0.3rem 2rem;
     align-items: center;
   }
 
@@ -1975,9 +1988,8 @@ desktop
   .header-desktop {
     display: flex;
     flex-direction: row;
-    width: 16rem;
+    width: 100%;
     overflow: hidden;
-    width: fit-content;
   }
   .txt-logo-desktop {
     font-size: 1.5rem;
