@@ -2020,13 +2020,11 @@ desktop
   transform: scale(1.05);
   opacity: 0.7;
 }
-
 .optimized-image__img.loaded {
   filter: blur(0);
   transform: scale(1);
   opacity: 1;
 }
-
 /* Skeleton */
 .optimized-image__skeleton {
   position: absolute;
@@ -2079,4 +2077,30 @@ desktop
 .name-rosario {
   font-size: 0.8rem;
   /* color: var(--c-primary-blue); */
+}
+
+/* ANIMATION sun */
+.rotate-center-sun {
+  -webkit-animation: rotate-center-sun 0.4s ease-in-out both;
+  animation: rotate-center-sun 0.4s ease-in-out both;
+}
+@-webkit-keyframes rotate-center-sun {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center-sun {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

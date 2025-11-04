@@ -56,9 +56,17 @@ export const Navbar = ({ handleScrollTop }) => {
               className="menu-item-nav"
             >
               {!isDark ? (
-                <IconMoonFilled color="black" size={"22px"}></IconMoonFilled>
+                <IconMoonFilled
+                  className="rotate-center-sun"
+                  color="black"
+                  size={"22px"}
+                ></IconMoonFilled>
               ) : (
-                <IconSun color={"yellow"} size={"22px"}></IconSun>
+                <IconSun
+                  className="rotate-center-sun"
+                  color={"yellow"}
+                  size={"22px"}
+                ></IconSun>
               )}
             </div>
             <div
