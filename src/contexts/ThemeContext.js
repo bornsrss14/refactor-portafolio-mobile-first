@@ -33,7 +33,7 @@ export const ThemeContextProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false);
 
   const toggleTheme = () => setIsDark((prev) => !prev);
-  // 🧩 aplica clases al body
+  //
   useEffect(() => {
     if (isDark) {
       document.body.classList.add("dark-theme");

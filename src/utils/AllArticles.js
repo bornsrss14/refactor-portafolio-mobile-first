@@ -487,7 +487,7 @@ export const allMainArticles = [
           codeBreakdown: [],
           codeTitleImg: "Importaciones y estado inicial",
           codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2F_componente_Context.png?alt=media&token=5d479cba-77bc-42e4-8fa4-8f8fc81a087a",
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2F_cambio_main.png?alt=media&token=e03a129e-5f42-42c8-b9ff-507d9df0e12e",
           balazo: undefined,
         },
         code: undefined,
