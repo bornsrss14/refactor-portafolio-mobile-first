@@ -433,104 +433,48 @@ export const allMainArticles = [
       "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Fdark_mode_captura.png?alt=media&token=4abb9bc5-58fc-4272-aebe-e14c077e53f4",
     balazoArticleImg: "Detail: Así se ve el componente en Dark mode",
     content:
-      "Context is intended to share data (global state) between components. The natural behavior of passing variables from parent component to their children can turn out messy. And React offer a solution through Context API. And for a deep understanding I’ve broken down the main structure, the part of create the Context with createContext() (do nothing for its own, It represents which context other components read or provide).Create a class Component to store our boilerplate that will be use as our Provider, we can be able to surround other components as their children, and the useContext hook.",
+      "When I first started building my portfolio website, I wanted users to be able to switch between light and dark themes easily. At first, I thought of handling this using props — but the deeper I got into the project, the more repetitive and messy it became. That’s when I decided to implement React Context to manage the theme globally.",
     paragrapsArticle: [
       {
+        subtitleParagraph: "Why Context?",
+        paragraph:
+          "The Context API in React is a great solution when you need to share data between components without passing props manually at every level. In my case, both the Navbar, Home, and other pages needed to know which theme was active — light or dark — and update their styles accordingly.",
+        lista: [],
+
+        codeSnippet: {},
+        code: "",
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Using Context allowed me to centralize the logic, simplify component communication, and improve code maintainability.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "My Implementation",
+        paragraph:
+          "I created a single file called ThemeContext.jsx, which exports two things:",
+        lista: [
+          {
+            txt_item: "1.- The context provider (ThemeContextProvider)",
+            subList: [],
+          },
+          {
+            txt_item: "2.- A custom hook (useThemeT)",
+            subList: [],
+          },
+        ],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
         subtitleParagraph:
-          "Step by step guideline to remediate the security leak.undefined",
+          "Here’s the simplified version of my implementation:",
         paragraph: "",
-        lista: [
-          {
-            txt_item: "1.	Revoke the exposed secret keys.",
-            subList: [],
-          },
-          {
-            txt_item: "2.	Clean the git history",
-            subList: [],
-          },
-          {
-            txt_item: "3.	Inspect Logs. ",
-            subList: [],
-          },
-        ],
-
-        codeSnippet: {},
-        code: "",
-      },
-
-      {
-        subtitleParagraph: "Step 1: Revoking the secret keys.",
-        paragraph:
-          "At first i had to remove .env file, so be ensure no one will access the involved service.",
-        lista: [],
-        codeSnippet: {},
-        code: undefined,
-      },
-      {
-        subtitleParagraph:
-          "Step 2: Clean the git history (is when git filter-repo comes into play)",
-        paragraph:
-          "Thankfully, for this simple case, git provides this command that make cleaning things up easy.I recommend you use git-filter-repo, this tool was very useful to rewrite the history of my project in a straightforward way",
-        lista: [],
-        codeSnippet: {},
-        code: undefined,
-      },
-      {
-        subtitleParagraph: undefined,
-        paragraph: "First, I installed git-filter-repo in my bash.",
-        lista: [],
-        codeSnippet: {},
-        code: "",
-      },
-      {
-        subtitleParagraph: undefined,
-        paragraph:
-          "To tell git-filter-repo to excise a file from the git history, I use this single command:",
-        lista: [],
-        codeSnippet: {},
-        code: "git filter-repo --use-base-name --path [FILENAME] --invert-paths",
-      },
-      {
-        subtitleParagraph: undefined,
-        paragraph:
-          "The - -use-base-name option tells git-filter-repo that we are specifying a file name, and not a full path to a file. Normally, git-filter-repo command works by ignoring the filenames specified (as the name suggest, in order to filter out). So, I was interested in opposite behavior, we can indicate to ignore everything except the specified file. So we must pass - - invert-paths to indicate this behavior. If you leave off the - - invert-paths, you will excise everything except the file you are specifying, which is exact the opposite case we want, and would likely be a completely mess, so, don’t do that. ",
-        lista: [],
-        codeSnippet: {},
-        code: undefined,
-      },
-      {
-        subtitleParagraph: "Step 3: Inspect logs.",
-        paragraph:
-          "After cleaning, I inspected my Git logs to confirm that the .env file was gone from the history.",
-        lista: [],
-        codeSnippet: {},
-        code: undefined,
-      },
-      {
-        subtitleParagraph: undefined,
-        paragraph:
-          "In conclusion: i think this is not the only or ultimate solution, we should consider different factors such as project size, team geography, and project scope, your may need additional safeguards, though in my specific case, this approach works perfectly. The key lesson I learned were:",
-
-        lista: [
-          {
-            txt_item:
-              "Is a good practice to add the .env file to .gitignore from the very beginning",
-            subList: [],
-          },
-          { txt_item: "Revoke compromised keys immediately.", subList: [] },
-          {
-            txt_item:
-              "Don’t just delete files, instead, make sure they are removed from git history",
-            subList: [],
-          },
-        ],
-        codeSnippet: {},
-        code: undefined,
-      },
-      {
-        subtitleParagraph: undefined,
-        paragraph:
-          "Mistakes happen, but what matters is learning about them and making sure they don’t happen again.",
         lista: [],
         codeSnippet: {},
         code: undefined,
@@ -540,15 +484,89 @@ export const allMainArticles = [
         paragraph: undefined,
         lista: [],
         codeSnippet: {
-          codeBreakdown: [
-            "mediaStatus es un objeto que almacena el estado de carga de cada medio (video e imágenes)",
-            "Inicialmente, todos los valores están en false porque aún no se ha intentado cargar nada",
-          ],
+          codeBreakdown: [],
           codeTitleImg: "Importaciones y estado inicial",
           codePreview:
-            "https://la.mathworks.com/discovery/code-review/_jcr_content/mainParsys/image_copy.adapt.full.medium.gif/1743076707628.gif",
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2F_componente_Context.png?alt=media&token=5d479cba-77bc-42e4-8fa4-8f8fc81a087a",
           balazo: undefined,
         },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Now any component in my app can access the current theme and toggle it easily:",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: "---",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Fconsume-context.png?alt=media&token=9e360292-d923-450a-ae22-64a55cf25985",
+          balazo: undefined,
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Debugging: When theme Was Undefined",
+        paragraph: "At one point, I ran into this error:",
+        lista: [
+          {
+            subList: ["Can't access property 'bg', theme is undefined"],
+          },
+        ],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph:
+          "After debugging, I realized that I was passing the value incorrectly to the provider:",
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: "---",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Ferror.png?alt=media&token=6c3e85ca-22cc-424d-bf54-eadcc48d5af4",
+          balazo: undefined,
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph:
+          "This wrapped the object inside another object. The fix was simple:",
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: " ",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Fcompuesto.png?alt=media&token=c0e1a87f-bebe-465c-9603-9b98be49f95c",
+          balazo:
+            "A tiny syntax mistake — but a perfect reminder that the way we structure context values matters a lot.",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Lessons Learned",
+        paragraph:
+          "This small implementation taught me that Context is more than a simple global store — it’s a pattern that encourages clean architecture and clear separation of responsibilities.It also reminded me of the importance of understanding how React re-renders and how useMemo helps to optimize unnecessary updates.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Final Thoughts",
+        paragraph:
+          "Migrating my theme logic to React Context not only made my code more scalable but also more enjoyable to maintain. It’s one of those improvements that seems small at first but makes a huge difference when your app grows.If you’re still passing props manually to handle global state — give Context a try. It’s worth it.",
+        lista: [],
+        codeSnippet: {},
         code: undefined,
       },
     ],
