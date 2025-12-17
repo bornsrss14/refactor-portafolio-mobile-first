@@ -119,7 +119,7 @@ export const Home = () => {
               />
               <Folder
                 linkMedia={
-                  "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fcv-rosariofuentes.pdf?alt=media&token=0ea89b39-fc83-4ca3-96dc-1c306e6aa87d"
+                  "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/CV%2F_CV_ROSARIO_FUENTES_GARCIA_ESP.pdf?alt=media&token=beb76c3e-6a37-442c-995f-5dbb12cd395c"
                 }
                 label="Download CV"
                 color="var(--azul-pastel)"
