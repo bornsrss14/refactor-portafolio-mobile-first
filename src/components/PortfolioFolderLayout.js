@@ -19,7 +19,7 @@ const tabsMobile = [
   { id: 1002, label: "Mobile", className: "purple" },
   { id: 1003, label: "Info", className: "yellow" },
 ];
-const tabsMobil = [
+/* const tabsMobil = [
   {
     id: 1001,
     title: "Mubi::",
@@ -62,7 +62,7 @@ const tabsMobil = [
     lab_two: "Mobile",
     lab_three: "Info",
   },
-];
+]; */
 
 const PortfolioFolderLayout = ({ item }) => {
   const { isMobile, isDesktop } = useBreakpoint();
