@@ -17,7 +17,7 @@ export const ExperienceItem = ({
         style={{
           color: theme.txt,
           background: theme.uiEduExp,
-          border: `1px solid ${theme.txt_logo}`,
+          border: `.31px solid ${theme.border}`,
         }}
         className="itemContainerExperience"
       >

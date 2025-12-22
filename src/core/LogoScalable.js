@@ -11,9 +11,9 @@ export const LogoScalable = ({ imagenImg, customHeight, customWidth }) => {
   };
   return (
     <div style={containerLogo}>
-      <Link to={"/"}>
-        <img className="img-full-cover" src={imagenImg} alt="MUBI logo" />
-      </Link>
+      {/* <Link to={"/"}> */}
+      <img className="img-full-cover" src={imagenImg} alt="MUBI logo" />
+      {/* </Link> */}
     </div>
   );
 };

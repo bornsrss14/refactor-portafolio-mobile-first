@@ -4,7 +4,12 @@ const Folder = ({ linkMedia, label = "Proyecto", color }) => {
   const { isDark, dark, light } = useThemeT();
   const theme = isDark ? dark : light;
   return (
-    <a className="slide-top" target="_blank" rel="noreferrer" href={linkMedia}>
+    <div
+      className="slide-top"
+      target="_blank"
+      rel="noreferrer"
+      href={linkMedia}
+    >
       <div
         style={{ color: "white", background: theme.folderFront }}
         className="folder shadow-pop-tl typewriter"
@@ -13,9 +18,11 @@ const Folder = ({ linkMedia, label = "Proyecto", color }) => {
           style={{ background: theme.folderBack }}
           className="folder-tab"
         ></div>
-        <span className="folder-label">{label}</span>
+        <span style={{ color: theme.txt }} className="folder-label">
+          {label}
+        </span>
       </div>
-    </a>
+    </div>
   );
 };
 

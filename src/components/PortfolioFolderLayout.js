@@ -3,6 +3,7 @@ import CardContent from "./CardContent";
 import DataProjects from "../utils/DataProjects";
 import DefaultCard from "./DefaultCard";
 import { useThemeT } from "../contexts/ThemeContext";
+import { useBreakpoint } from "../hooks/useBreakpoint";
 
 const tabs = [
   { id: 1001, label: "MUBI::", className: "blue" },
@@ -13,94 +14,157 @@ const tabs = [
   { id: 1006, label: "To-Do", className: "green" },
 ];
 
-const PortfolioFolderLayout = () => {
+const tabsMobile = [
+  { id: 1001, label: "Preview", className: "blue" },
+  { id: 1002, label: "Mobile", className: "purple" },
+  { id: 1003, label: "Info", className: "yellow" },
+];
+const tabsMobil = [
+  {
+    id: 1001,
+    title: "Mubi::",
+    lab_one: "Preview",
+    lab_two: "Mobile",
+    lab_three: "Info",
+  },
+  {
+    id: 1002,
+    title: "Notary",
+    lab_one: "Preview",
+    lab_two: "Mobile",
+    lab_three: "Info",
+  },
+  {
+    id: 1003,
+    title: "Pokedex",
+    lab_one: "Preview",
+    lab_two: "Mobile",
+    lab_three: "Info",
+  },
+  {
+    id: 1004,
+    title: "Maps",
+    lab_one: "Preview",
+    lab_two: "Mobile",
+    lab_three: "Info",
+  },
+  {
+    id: 1005,
+    title: "Split Bills",
+    lab_one: "Preview",
+    lab_two: "Mobile",
+    lab_three: "Info",
+  },
+  {
+    id: 1006,
+    title: "To do",
+    lab_one: "Preview",
+    lab_two: "Mobile",
+    lab_three: "Info",
+  },
+];
+
+const PortfolioFolderLayout = ({ item }) => {
+  const { isMobile, isDesktop } = useBreakpoint();
   const [activeTab, setActiveTab] = useState(0);
   const activeItem = DataProjects.find((item) => item.id === activeTab);
 
+  const activeItemMobile = DataProjects.find((item) => item.id === activeTab);
   const { isDark, dark, light } = useThemeT();
   const theme = isDark ? dark : light;
   return (
     <>
-      {/* <div className="card">
-        <div className="cubierta-blanca"></div>
-
-        <h2 className="font-sub-titles">
-          {activeTab ? activeItem.projectTitle : "Personal projects"}
-        </h2>
-        <button className="card-white"></button>
-
-        <div className="tabs">
-          {tabs.map((tab, index) => (
-            <button
-              key={tab.id}
-              className={`tab ${tab.className} ${
-                activeTab === tab.id ? "estiloBotonActivo" : "estiloBotonNormal"
-              }`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="content">
-          {
-            <>
-              {activeItem ? (
-                <CardContent key={activeItem.id} item={activeItem} />
-              ) : (
-                <DefaultCard />
-              )}
-            </>
-          }
-        </div>
-      </div> */}
-      <div className="folder-f">
-        <div style={{ background: theme.folderBack }} className="folder-back-f">
+      {isMobile && (
+        <div className="folder-f">
           <div
             style={{ background: theme.folderBack }}
-            className="cubierta-blanca"
-          ></div>
-          <div className="tabs">
-            {tabs.map((tab, index) => (
-              <button
-                key={tab.id}
-                className={`tab ${tab.className} ${
-                  activeTab === tab.id
-                    ? "estiloBotonActivo"
-                    : "estiloBotonNormal"
-                }`}
-                onClick={() => setActiveTab(tab.id)}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          <div
-            style={{ background: theme.folderFront }}
-            className="folder-front-f"
+            className="folder-back-f"
           >
-            <div className="content">
-              {
-                <>
-                  {activeItem ? (
-                    <CardContent key={activeItem.id} item={activeItem} />
-                  ) : (
-                    <DefaultCard />
-                  )}
+            <div
+              style={{ background: theme.folderBack }}
+              className="cubierta-blanca-mobile"
+            ></div>
+            <div>
+              {(isMobile && tabsMobile).map((tab, index) => (
+                <button
+                  key={tab.id}
+                  className={`tab ${tab.className} ${
+                    activeTab === tab.id
+                      ? "estiloBotonActivo"
+                      : "estiloBotonNormal"
+                  }`}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
 
-                  {/*  {DataProjects.map((item) =>
-                item.id === activeTab ? (
-                  <CardContent key={item.id} item={item} />
-                ) : null
-              )} */}
-                </>
-              }
+            <div
+              style={{ background: theme.folderFront }}
+              className="folder-front-f"
+            >
+              <div className="content">
+                {/* 🛠️ TODO: Renderizar por secciones */}
+                {
+                  <>
+                    {activeItemMobile ? (
+                      <CardContent key={activeItem.id} item={activeItem} />
+                    ) : (
+                      <p>Ros</p>
+                    )}
+                  </>
+                }
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
+      {isDesktop && (
+        <div className="folder-f">
+          <div
+            style={{ background: theme.folderBack }}
+            className="folder-back-f"
+          >
+            <div
+              style={{ background: theme.folderBack }}
+              className="cubierta-blanca"
+            ></div>
+            <div className="tabs">
+              {(isMobile ? tabsMobile : tabs).map((tab, index) => (
+                <button
+                  key={tab.id}
+                  className={`tab ${tab.className} ${
+                    activeTab === tab.id
+                      ? "estiloBotonActivo"
+                      : "estiloBotonNormal"
+                  }`}
+                  onClick={() => setActiveTab(tab.id)}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            <div
+              style={{ background: theme.folderFront }}
+              className="folder-front-f"
+            >
+              <div className="content">
+                {
+                  <>
+                    {activeItem ? (
+                      <CardContent key={activeItem.id} item={activeItem} />
+                    ) : (
+                      <DefaultCard />
+                    )}
+                  </>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -4,6 +4,7 @@ export const ThemeContext = createContext();
 const dark = {
   txt: "var(--primary-white)",
   txt_logo: "white",
+  border: "rgba(103, 98, 98, 0.83)",
   ui: "var(--raisin-black-light)",
   uiEduExp: "var(--night-bg)",
   bg: "var(--night-bg)",
@@ -14,10 +15,13 @@ const dark = {
   folderFront: "var(--color-dark-folder-front)",
   folderBack: "var(--color-dark-folder-back)",
   bgMansory: "var(--raisin-black-light)",
+  bgSkillBlue: "rgba(113, 113, 113, 1)",
+  txtSkillBlue: "white",
 };
 const light = {
   txt: "var(--night-bg)",
   txt_logo: "var(--c-primary-blue)",
+  border: "rgba(92, 88, 88, 1)",
   ui: "var(--white-dark)",
   uiEduExp: "var(--white-dark)",
   bg: "var(--primary-white)",
@@ -28,6 +32,8 @@ const light = {
   folderFront: "var(--azul-pastel)",
   folderBack: "var(--azul-pastel-dark)",
   bgMansory: "var(--primary-white)",
+  bgSkillBlue: "rgb(0, 0, 255)",
+  txtSkillBlue: "white",
 };
 export const ThemeContextProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(false);

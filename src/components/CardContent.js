@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import VideoTutorial from "../core/VideoTutorial.js";
+import TutorialLinks from "../core/TutorialLinks.js";
+import ScreenShotsMobile from "../core/ScreenShotsMobile.js";
+import { useBreakpoint } from "../hooks/useBreakpoint.js";
 
 export const CardContent = ({ item }) => {
   const [mediaStatus, setMediaStatus] = useState({
@@ -9,6 +13,10 @@ export const CardContent = ({ item }) => {
     firstScreenError: false,
     secondScreenError: false,
   });
+  const { isMobile, isTablet, isDesktop } = useBreakpoint();
+  console.log("Es mobil:", isMobile);
+  console.log("Es tableta:", isTablet);
+  console.log("Es desktop:", isDesktop);
   //Precargando los medios
   useEffect(() => {
     const loadMedia = async () => {
@@ -47,110 +55,54 @@ export const CardContent = ({ item }) => {
     loadMedia();
   }, [item]);
 
+  console.log(item, "mi item (×_×)");
   return (
     <>
-      <div className="grid-card-content-desktop">
-        <div className="container-video-tutorial">
-          <p className="para-about">{item.briefDescription}</p>
-
-          {/* video con estado de carga */}
-          <div className="video-container">
-            {mediaStatus.videoError ? (
-              <div className="media-error">Video no disponible</div>
-            ) : (
-              <video
-                width="100%"
-                height="auto"
-                autoPlay
-                muted
-                loop
-                style={{ opacity: mediaStatus.videoLoaded ? 1 : 0 }}
-              >
-                <source src={item.url_video} type="video/mp4" />
-                Tu navegador no soporta el elemento video.
-              </video>
-            )}
-            {!mediaStatus.videoLoaded && !mediaStatus.videoError && (
-              <div className="media-loading">
-                <div className="loading-spinner"></div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="container-ss">
+      {/* decido si isMobile entonces grid-view-mobile*/}
+      {/* decido si isDesktop entonces grid-card-content-desktop */}
+      {isMobile && (
+        <div className="grid-card-content-desktop">
           <div>
-            <p>Enfoque mobile-first</p>
-            <div className="div-ss-tutorial">
-              {/* Imágenes con estado de carga */}
-
-              <div className="image-wrapper">
-                <img
-                  className={`img-ss ${
-                    mediaStatus.firstScreenLoaded ? "loaded" : "loading"
-                  }`}
-                  src={item.firstScreenShot}
-                  alt="first-ss"
-                />
-
-                {!mediaStatus.firstScreenLoaded &&
-                  !mediaStatus.firstScreenError && (
-                    <div className="image-loading-state">
-                      <div className="loading-spinner"></div>
-                    </div>
-                  )}
-
-                {mediaStatus.firstScreenError && (
-                  <div className="image-error-state">Imagen no disponible</div>
-                )}
-              </div>
-
-              {/*  second*/}
-
-              <div className="image-wrapper">
-                <img
-                  className={`img-ss ${
-                    mediaStatus.secondScreenLoaded ? "loaded" : "loading"
-                  }`}
-                  src={item.secondScreenShot}
-                  alt="first-ss"
-                />
-
-                {!mediaStatus.secondScreenLoaded &&
-                  !mediaStatus.secondScreenError && (
-                    <div className="image-loading-state">
-                      <div className="loading-spinner"></div>
-                    </div>
-                  )}
-
-                {mediaStatus.secondScreenError && ( // Cambiado de firstImageError a secondScreenError
-                  <div className="image-error-state">Imagen no disponible</div>
-                )}
-              </div>
+            <VideoTutorial
+              mediaStatus={mediaStatus}
+              item={item}
+            ></VideoTutorial>
+            <div>
+              <TutorialLinks item={item}></TutorialLinks>
             </div>
           </div>
-          <p style={{ marginBottom: ".5rem" }}>
-            Providing a seamless experience across mobile devices and smaller
-            screen.
-          </p>
-          <div className="tutorial-links">
-            <a target="_blank" rel="noreferrer" href={item.liveDemo}>
-              <span style={{ fontSize: "1rem" }}>🔗</span>Live demo here
-            </a>
-            <a target="_blank" rel="noreferrer" href={item.gitRepo}>
-              {" "}
-              <span>
-                <img
-                  src="https://github.githubassets.com/assets/mona-loading-dark-7701a7b97370.gif"
-                  alt="Funny animation"
-                  width="25px"
-                />
-              </span>
-              Git repo here
-            </a>
+          {/* esta clase debe cambiar según el dispositivo — ↓↓ */}
+          {/*  <div className="container-ss">
+            <ScreenShotsMobile
+              mediaStatus={mediaStatus}
+              item={item}
+            ></ScreenShotsMobile>
+            <div>
+              <TutorialLinks item={item}></TutorialLinks>
+            </div>
+          </div> */}
+        </div>
+      )}
+      {isDesktop && (
+        <div className="grid-card-content-desktop">
+          <div>
+            <VideoTutorial
+              mediaStatus={mediaStatus}
+              item={item}
+            ></VideoTutorial>
+          </div>
+          {/* esta clase debe cambiar según el dispositivo — ↓↓ */}
+          <div className="container-ss">
+            <ScreenShotsMobile
+              mediaStatus={mediaStatus}
+              item={item}
+            ></ScreenShotsMobile>
+            <div>
+              <TutorialLinks item={item}></TutorialLinks>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 };

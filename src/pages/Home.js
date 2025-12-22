@@ -13,8 +13,34 @@ import { SectionSubtitle } from "../core/SectionSubtitle";
 import { Link } from "react-router-dom";
 import { OptimizedImage } from "../hooks/useOptimizedImage";
 import { useThemeT } from "../contexts/ThemeContext";
+import { useBreakpoint } from "../hooks/useBreakpoint";
+import DataProjects from "../utils/DataProjects";
 
 export const Home = () => {
+  const foldersData = [
+    {
+      id: "linkedin",
+      linkMedia: "https://www.linkedin.com/in/bornsrss/details/certifications/",
+      label: "LinkedIn",
+    },
+    {
+      id: "github",
+      linkMedia: "https://github.com/bornsrss14",
+      label: "GitHub",
+    },
+    {
+      id: "cv",
+      linkMedia:
+        "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/CV%2F_CV_ROSARIO_FUENTES_GARCIA_ESP.pdf?alt=media&token=beb76c3e-6a37-442c-995f-5dbb12cd395c",
+      label: "Download CV",
+    },
+  ];
+
+  /*  const tabsMobile = [
+    { id: 1001, label: "Preview", className: "blue" },
+    { id: 1002, label: "Mobile", className: "purple" },
+    { id: 1003, label: "Info", className: "yellow" },
+  ]; */
   const SuperStrong = ({ children }) => (
     <p className="name-message" style={{ fontSize: "3.6rem" }}>
       {children}
@@ -40,18 +66,17 @@ export const Home = () => {
 
   const { isDark, light, dark } = useThemeT();
   const theme = isDark ? dark : light;
+  const { isMobile, isDesktop } = useBreakpoint();
   return (
     <>
       <section className="about-me extra-margin">
         <div className="grid-photo-introduction">
           <div className="photo">
-            <div>
-              <p className="my-name-txt">
-                <TypeIt>
-                  Hi, It's me {""}
-                  <SuperStrong>Rosario</SuperStrong>
-                </TypeIt>
-              </p>
+            <div className="my-name-txt">
+              <TypeIt>
+                Hi, It's me {""}
+                <SuperStrong>Rosario</SuperStrong>
+              </TypeIt>
             </div>
             <div className="brief-intro">
               <p>
@@ -91,39 +116,27 @@ export const Home = () => {
                 <span style={strong}> Taildwind CSS</span>
               </p>
             </div>
-            <div className="introduction-g2">
-              {/*  <img
+            {!isMobile && (
+              <div className="introduction-g2">
+                {/*  <img
                             style={{ height: "130px", width: "200px" }}
                             alt="doodle"
                             src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2FOpen%20Doodles%20-%20Reading.png?alt=media&token=cd682543-e3e2-47a1-8caf-51627e802218"
                             ></img> */}
-              <Titulo measure="60px"></Titulo>
-            </div>
+                <Titulo measure="60px"></Titulo>
+              </div>
+            )}
           </div>
           <div className="div-files">
             <div>
               <p>Explore my professional experience in the links below.</p>
             </div>
             <div className="flex-carpets">
-              <Folder
-                linkMedia={
-                  "https://www.linkedin.com/in/bornsrss/details/certifications/"
-                }
-                label="LinkedIn"
-                color="var(--azul-pastel)"
-              />
-              <Folder
-                linkMedia={"https://github.com/bornsrss14"}
-                label="GitHub"
-                color="var(--azul-pastel)"
-              />
-              <Folder
-                linkMedia={
-                  "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/CV%2F_CV_ROSARIO_FUENTES_GARCIA_ESP.pdf?alt=media&token=beb76c3e-6a37-442c-995f-5dbb12cd395c"
-                }
-                label="Download CV"
-                color="var(--azul-pastel)"
-              />
+              {foldersData.map((folder) => (
+                <a key={folder.id} href={folder.linkMedia}>
+                  <Folder label={folder.label} color="var(--azul-pastel)" />
+                </a>
+              ))}
 
               <Link to={"/ui-components"}>
                 <Folder
@@ -143,57 +156,79 @@ export const Home = () => {
           Here are some personal projects I've been working lately
         </p>
       </section>
-
-      <section
-        style={{ background: theme.bgExperience }}
-        className="grid-section-projects"
-      >
-        <div className="container-arrow-hash-none container-arrow-hash ">
-          <div>
-            <IconArrowLeft color={theme.txt} size={"14rem"} className="arrow" />
-          </div>
-          <div style={{ color: theme.txt }}>
+      <section>
+        {isMobile &&
+          DataProjects.map((p) => (
             <div
-              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
-              className="flex-hash"
+              style={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "1rem",
+                height: "auto",
+              }}
             >
-              <p>#HTML</p>
-              <p>#CSS</p>
+              <PortfolioFolderLayout item={p} />
             </div>
-            <div
-              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
-              className="flex-hash"
-            >
-              <p>#JavaScript</p>
-              <p>#React</p>
-            </div>
-            <div
-              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
-              className="flex-hash"
-            >
-              <p>#MySQL</p>
-              <p>#NodeJs</p>
-            </div>
-            <div
-              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
-              className="flex-hash"
-            >
-              <p>#Figma</p>
-              <p>#ContextAPI</p>
-              <p>#Hooks</p>
-            </div>
-            <div
-              style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
-              className="flex-hash"
-            >
-              <p>#TypeScript</p>
-              <p>#Taildwind</p>
-              <p>#MongoDB</p>
-            </div>
-          </div>
-        </div>
-        <PortfolioFolderLayout />
+          ))}
       </section>
+
+      {isDesktop && (
+        <section
+          style={{ background: theme.bgExperience }}
+          className="grid-section-projects"
+        >
+          <div className="container-arrow-hash-none container-arrow-hash ">
+            <div>
+              <IconArrowLeft
+                color={theme.txt}
+                size={"14rem"}
+                className="arrow"
+              />
+            </div>
+            <div style={{ color: theme.txt }}>
+              <div
+                style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+                className="flex-hash"
+              >
+                <p>#HTML</p>
+                <p>#CSS</p>
+              </div>
+              <div
+                style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+                className="flex-hash"
+              >
+                <p>#JavaScript</p>
+                <p>#React</p>
+              </div>
+              <div
+                style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+                className="flex-hash"
+              >
+                <p>#MySQL</p>
+                <p>#NodeJs</p>
+              </div>
+              <div
+                style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+                className="flex-hash"
+              >
+                <p>#Figma</p>
+                <p>#ContextAPI</p>
+                <p>#Hooks</p>
+              </div>
+              <div
+                style={{ borderBottom: `1px solid ${theme.colorBorder} ` }}
+                className="flex-hash"
+              >
+                <p>#TypeScript</p>
+                <p>#Taildwind</p>
+                <p>#MongoDB</p>
+              </div>
+            </div>
+          </div>
+          <PortfolioFolderLayout />
+        </section>
+      )}
       <section className="grid-experience">
         <div style={{ background: theme.bgExperience }} className="item">
           <div id="myResumen"></div>
@@ -235,7 +270,7 @@ export const Home = () => {
           <SectionSubtitle txtSubtitle={"Hardskill"} />
 
           <div>
-            <BtnClassic color={theme.tags} btnText={"React"}></BtnClassic>
+            <BtnClassic btnText={"React"}></BtnClassic>
             <BtnClassic color="white" btnText={"HTML"}></BtnClassic>
             <BtnClassic color={theme.tags} btnText={"JavaScript"}></BtnClassic>
             <BtnClassic

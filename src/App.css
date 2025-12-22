@@ -271,6 +271,7 @@ no es necesario
 }
 .footer-content {
   margin: 2rem auto;
+  padding: 0.3rem 0rem 2rem;
   width: 100%;
   /* background-color: var(--white-dark); */
   position: relative;
@@ -447,7 +448,6 @@ desktop
   flex-direction: row;
   gap: 0;
   transform-origin: top right; /* punto de rotación */
-  transform: rotate(90deg) translateY(-100%) translateX(100%) translateX(100px);
 }
 
 .card-white {
@@ -472,7 +472,7 @@ desktop
   display: grid;
   grid-template-columns: 1fr;
   margin: 0rem auto;
-  padding: 0.5rem 0.5rem;
+  padding: 1.5rem 1.8rem;
 }
 .grid-about-me > *:first-child {
   order: 2; /* se manda a la segunda columna */
@@ -502,10 +502,10 @@ desktop
 .itemContainerExperience {
   /* border: solid 1px rgba(0, 0, 255, 0.238); */
   border-radius: 15px;
-  min-width: 15rem;
+  width: 99%;
   max-width: 100%;
   height: auto;
-  padding: 1.5rem 2.3rem;
+  padding: 1.5rem 1.3rem;
   margin: 1rem auto;
   overflow-x: hidden;
   display: flex;
@@ -528,15 +528,6 @@ desktop
   padding: 1rem 1.4rem;
   margin: 1rem 0;
   overflow-x: hidden;
-}
-.cubierta-blanca {
-  position: absolute;
-  border-radius: 0px 14px 14px 0;
-  top: 0;
-  right: 0; /* pegado al lado derecho */
-  width: 18px; /* ancho de la “barra” blanca */
-  height: 1rem; /* ocupa toda la altura del contenedor padre */
-  z-index: 100;
 }
 
 .photo {
@@ -572,17 +563,17 @@ desktop
   display: none;
 }
 .flex-carpets {
-  width: fit-content;
+  width: 100%;
   display: flex;
   gap: 1.5rem;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 1rem 0rem;
 }
 .div-touch-files {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 1rem 0rem;
   padding: 1rem;
 }
 .div-files {
@@ -590,7 +581,7 @@ desktop
   flex-direction: column;
   margin: 0rem 1rem;
   height: auto;
-  padding: 1rem 3rem;
+  padding: 1.3rem 0rem;
 }
 .flex-circle-txt-sub {
   display: flex;
@@ -760,8 +751,8 @@ desktop
 /*  files*/
 
 .folder {
-  width: 10rem;
-  height: 5.5rem;
+  width: 9rem;
+  height: 5.2rem;
   border-radius: 8px;
   box-shadow: 0 8px 14px rgba(121, 121, 121, 0.15);
   position: relative;
@@ -787,7 +778,7 @@ desktop
 .folder-label {
   padding: 0.56rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 
 /* MAIN portfolio */
@@ -944,7 +935,7 @@ desktop
 } */
 
 .item {
-  padding: 2rem 1.5rem;
+  padding: 2rem 0.8rem;
   border-radius: 25px;
 }
 .container-video-tutorial {
@@ -1026,6 +1017,7 @@ desktop
 .my-name-txt {
   font-size: 3.5rem;
   font-weight: 700;
+  color: white;
   text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.715);
 }
 .rosario {
@@ -1077,6 +1069,7 @@ desktop
 .workAs-txt {
   font-weight: 600;
   font-size: 1.2rem;
+  text-align: center;
 }
 
 .div-dates-txt {
@@ -1332,7 +1325,7 @@ desktop
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 270px;
+  min-height: 180px;
   width: 100%;
   color: #666;
 }
@@ -1534,26 +1527,76 @@ desktop
   width: 100vw;
 }
 
+.cubierta-blanca-mobile {
+  position: absolute;
+  top: 1.5rem; /* Pegado arriba */
+  left: 0;
+  width: 100%; /* Ocupa todo el ancho del padre*/
+  height: 24px;
+  /* background: var(--azul-pastel-dark); */
+  z-index: 1;
+}
+
+.folder-f {
+  position: relative;
+  width: 96%;
+  margin: 0.4rem auto 4.4rem;
+  height: 28rem;
+}
+.folder-back-f {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background: var(--azul-pastel-dark); */
+  border-radius: 0 14px 14px 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.folder-back-f::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  width: 194px;
+  height: 28px;
+  background: var(--azul-pastel-dark);
+  border-radius: 8px 8px 0 0;
+}
+.folder-front-f {
+  position: relative;
+  top: 17px;
+  left: 0;
+  width: 100%;
+  height: 19rem;
+  /* background: var(--azul-pastel); */
+  border-radius: 0 10px 10px 10px;
+  border-top: 2px solid rgba(82, 85, 110, 0.09);
+  z-index: 2;
+}
+.personal-projects-section {
+  margin: 0.6rem auto 3rem;
+  padding: 0.4rem 1rem;
+}
 /* 💻 Desktop – 1024px to 1440px */
-@media (min-width: 1024px) {
-  .personal-projects-section {
-    max-width: 90%;
-    margin: 0.6rem auto 1rem;
-    text-align: center;
-    padding: 0.4rem 1rem;
+@media (min-width: 1023px) {
+  .item {
+    padding: 2rem 1.5rem;
+    border-radius: 25px;
   }
-  .personal-projects-section h2 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    /* color: #000; */
+  .media-error,
+  .image-error {
+    min-height: 240px;
+    width: 100%;
+    color: #666;
+  }
+  .cubierta-blanca {
+    position: absolute;
+    top: 0; /* Pegado arriba */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho del padre*/
+    height: 24px;
+    /* background: var(--azul-pastel-dark); */
+    z-index: 1;
   }
 
-  .personal-projects-section p {
-    font-size: 16px;
-    color: #333;
-    margin: 0;
-  }
   .folder-f {
     position: relative;
     width: 91%;
@@ -1598,6 +1641,26 @@ desktop
       0px 100%
     );
   }
+
+  .personal-projects-section {
+    max-width: 90%;
+    margin: 0.6rem auto 1rem;
+    text-align: center;
+    padding: 0.4rem 1rem;
+  }
+  .personal-projects-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    /* color: #000; */
+  }
+
+  .personal-projects-section p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+  }
+
   .container-article {
     max-width: 100%;
     width: 70%;
@@ -1700,18 +1763,9 @@ desktop
     transform: rotate(0deg);
     top: -33px;
     right: 3.4rem;
-
     gap: 0px;
   }
-  .cubierta-blanca {
-    position: absolute;
-    top: 0; /* Pegado arriba */
-    left: 0;
-    width: 100%; /* Ocupa todo el ancho del padre*/
-    height: 24px;
-    /* background: var(--azul-pastel-dark); */
-    z-index: 1;
-  }
+
   .container-arrow-hash {
     display: flex;
     flex-direction: column;
@@ -1750,6 +1804,7 @@ desktop
     grid-template-columns: 56% 1fr;
     gap: 1rem;
   }
+
   .image-wrapper {
     position: relative;
     width: 100%;
@@ -1925,7 +1980,7 @@ desktop
     border-radius: 19px;
   }
   .flex-carpets {
-    margin: 1.4rem 1rem 1rem 0rem;
+    margin: 1.4rem;
   }
 
   .para-about {
@@ -2103,4 +2158,8 @@ desktop
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.render-desktop {
+  display: block;
 }
