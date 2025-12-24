@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 export const VideoTutorial = ({ item, mediaStatus }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  const [setIsLoaded] = useState(false);
+  const [setHasError] = useState(false);
 
   return (
     <div>
@@ -22,6 +22,7 @@ export const VideoTutorial = ({ item, mediaStatus }) => {
               autoPlay
               src={item.url_video}
               controls
+              loop
               playsInline
               preload="metadata"
               muted
