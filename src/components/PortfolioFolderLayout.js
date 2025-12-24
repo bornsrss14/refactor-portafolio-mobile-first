@@ -15,63 +15,27 @@ const tabs = [
 ];
 
 const tabsMobile = [
-  { id: 1001, label: "Preview", className: "blue" },
+  { id: 1001, label: "My Preview", className: "blue" },
   { id: 1002, label: "Mobile", className: "purple" },
   { id: 1003, label: "Info", className: "yellow" },
 ];
-/* const tabsMobil = [
-  {
-    id: 1001,
-    title: "Mubi::",
-    lab_one: "Preview",
-    lab_two: "Mobile",
-    lab_three: "Info",
-  },
-  {
-    id: 1002,
-    title: "Notary",
-    lab_one: "Preview",
-    lab_two: "Mobile",
-    lab_three: "Info",
-  },
-  {
-    id: 1003,
-    title: "Pokedex",
-    lab_one: "Preview",
-    lab_two: "Mobile",
-    lab_three: "Info",
-  },
-  {
-    id: 1004,
-    title: "Maps",
-    lab_one: "Preview",
-    lab_two: "Mobile",
-    lab_three: "Info",
-  },
-  {
-    id: 1005,
-    title: "Split Bills",
-    lab_one: "Preview",
-    lab_two: "Mobile",
-    lab_three: "Info",
-  },
-  {
-    id: 1006,
-    title: "To do",
-    lab_one: "Preview",
-    lab_two: "Mobile",
-    lab_three: "Info",
-  },
-]; */
 
-const PortfolioFolderLayout = ({ item }) => {
+const PortfolioFolderLayout = ({ itemObject }) => {
+  const itemObjectRender = itemObject;
   const { isMobile, isDesktop } = useBreakpoint();
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(1001);
+  const [activeMobileTab, setActiveMobileTab] = useState(1001);
   const activeItem = DataProjects.find((item) => item.id === activeTab);
 
-  const activeItemMobile = DataProjects.find((item) => item.id === activeTab);
   const { isDark, dark, light } = useThemeT();
   const theme = isDark ? dark : light;
+
+  const tabMap = {
+    1001: itemObjectRender?.tab_one,
+    1002: itemObjectRender?.tab_two,
+    1003: itemObjectRender?.tab_three,
+  };
+  const currentItem = tabMap[activeMobileTab] ?? null;
   return (
     <>
       {isMobile && (
@@ -89,11 +53,11 @@ const PortfolioFolderLayout = ({ item }) => {
                 <button
                   key={tab.id}
                   className={`tab ${tab.className} ${
-                    activeTab === tab.id
+                    activeMobileTab === tab.id
                       ? "estiloBotonActivo"
                       : "estiloBotonNormal"
                   }`}
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => setActiveMobileTab(tab.id)}
                 >
                   {tab.label}
                 </button>
@@ -108,8 +72,8 @@ const PortfolioFolderLayout = ({ item }) => {
                 {/* 🛠️ TODO: Renderizar por secciones */}
                 {
                   <>
-                    {activeItemMobile ? (
-                      <CardContent key={activeItem.id} item={activeItem} />
+                    {currentItem ? (
+                      <CardContent key={currentItem.id} item={currentItem} />
                     ) : (
                       <p>Ros</p>
                     )}

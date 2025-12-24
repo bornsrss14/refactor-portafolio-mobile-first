@@ -13,17 +13,14 @@ export const CardContent = ({ item }) => {
     firstScreenError: false,
     secondScreenError: false,
   });
-  const { isMobile, isTablet, isDesktop } = useBreakpoint();
-  console.log("Es mobil:", isMobile);
-  console.log("Es tableta:", isTablet);
-  console.log("Es desktop:", isDesktop);
+  const { isMobile, isDesktop } = useBreakpoint();
   //Precargando los medios
   useEffect(() => {
     const loadMedia = async () => {
       try {
         //precargarVideo
         const video = document.createElement("video");
-        video.src = item.url_video;
+        video.src = item?.objeto?.url_video ?? item?.url_video;
         video.onloadeddata = () =>
           setMediaStatus((prev) => ({ ...prev, videoLoaded: true }));
         video.onerror = () =>
@@ -45,8 +42,14 @@ export const CardContent = ({ item }) => {
           });
         };
         await Promise.all([
-          loadScreenShot(item.firstScreenShot, "firstScreenLoaded"), // Corregido
-          loadScreenShot(item.secondScreenShot, "secondScreenLoaded"), // Corregido
+          loadScreenShot(
+            item?.objeto?.firstScreenShot ?? item?.firstScreenShot,
+            "firstScreenLoaded"
+          ), // Corregido
+          loadScreenShot(
+            item?.objeto?.secondScreenShot ?? item?.secondScreenShot,
+            "secondScreenLoaded"
+          ), // Corregido
         ]);
       } catch (error) {
         console.log("Error loading screenshots", error);
@@ -55,32 +58,33 @@ export const CardContent = ({ item }) => {
     loadMedia();
   }, [item]);
 
-  console.log(item, "mi item (×_×)");
   return (
     <>
       {/* decido si isMobile entonces grid-view-mobile*/}
       {/* decido si isDesktop entonces grid-card-content-desktop */}
       {isMobile && (
         <div className="grid-card-content-desktop">
-          <div>
-            <VideoTutorial
-              mediaStatus={mediaStatus}
-              item={item}
-            ></VideoTutorial>
+          {item?.id === 1001 && (
             <div>
-              <TutorialLinks item={item}></TutorialLinks>
+              <p>{item?.objeto?.projectTitle ?? item?.projectTitle}</p>
+              <VideoTutorial
+                mediaStatus={mediaStatus}
+                item={item?.objeto ?? item}
+              ></VideoTutorial>
+              <div>
+                <TutorialLinks item={item?.objeto ?? item}></TutorialLinks>
+              </div>
             </div>
-          </div>
-          {/* esta clase debe cambiar según el dispositivo — ↓↓ */}
-          {/*  <div className="container-ss">
-            <ScreenShotsMobile
-              mediaStatus={mediaStatus}
-              item={item}
-            ></ScreenShotsMobile>
-            <div>
-              <TutorialLinks item={item}></TutorialLinks>
+          )}
+          {item?.id === 1002 && (
+            <div className="container-ss">
+              <ScreenShotsMobile
+                mediaStatus={mediaStatus}
+                item={item?.objeto ?? item}
+              ></ScreenShotsMobile>
             </div>
-          </div> */}
+          )}
+          {item?.id === 1003 && <p>(°ロ°) !</p>}
         </div>
       )}
       {isDesktop && (

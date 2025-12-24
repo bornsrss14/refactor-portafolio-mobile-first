@@ -75,7 +75,7 @@ export const Navbar = ({ handleScrollTop }) => {
                 cursor: "pointer",
                 color: theme.txt,
               }}
-              onClick={console.log("Esto es de español")}
+              onClick={console.log("español")}
               className="menu-item-nav"
             >
               <IconLanguageHiragana

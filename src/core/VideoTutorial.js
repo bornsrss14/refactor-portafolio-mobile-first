@@ -21,7 +21,7 @@ export const VideoTutorial = ({ item, mediaStatus }) => {
               loop
               style={{ opacity: mediaStatus.videoLoaded ? 1 : 0 }}
             >
-              <source src={item.url_video} type="video/mp4" />
+              <source src={item?.url_video} type="video/mp4" />
               Tu navegador no soporta el elemento video.
             </video>
           )}

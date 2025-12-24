@@ -1532,7 +1532,7 @@ desktop
   top: 1.5rem; /* Pegado arriba */
   left: 0;
   width: 100%; /* Ocupa todo el ancho del padre*/
-  height: 24px;
+  height: 34px;
   /* background: var(--azul-pastel-dark); */
   z-index: 1;
 }

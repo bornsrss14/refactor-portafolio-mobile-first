@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import { OptimizedImage } from "../hooks/useOptimizedImage";
 import { useThemeT } from "../contexts/ThemeContext";
 import { useBreakpoint } from "../hooks/useBreakpoint";
-import DataProjects from "../utils/DataProjects";
+import { DataProjectsMobile } from "../utils/DataProjects";
 
 export const Home = () => {
   const foldersData = [
@@ -158,7 +158,7 @@ export const Home = () => {
       </section>
       <section>
         {isMobile &&
-          DataProjects.map((p) => (
+          DataProjectsMobile.map((p, index) => (
             <div
               style={{
                 width: "100%",
@@ -168,7 +168,7 @@ export const Home = () => {
                 height: "auto",
               }}
             >
-              <PortfolioFolderLayout item={p} />
+              <PortfolioFolderLayout itemObject={p} />
             </div>
           ))}
       </section>
