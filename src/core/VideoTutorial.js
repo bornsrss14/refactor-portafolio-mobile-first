@@ -1,5 +1,3 @@
-import React from "react";
-
 export const VideoTutorial = ({ item, mediaStatus }) => {
   return (
     <div>
@@ -14,6 +12,8 @@ export const VideoTutorial = ({ item, mediaStatus }) => {
             </div>
           ) : (
             <video
+              controls
+              playsInline
               width="100%"
               height="auto"
               autoPlay
