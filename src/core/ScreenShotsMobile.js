@@ -9,20 +9,20 @@ export const ScreenShotsMobile = ({ mediaStatus, item }) => {
           <div className="image-wrapper">
             <img
               className={`img-ss ${
-                mediaStatus.firstScreenLoaded ? "loaded" : "loading"
+                mediaStatus?.firstScreenLoaded ? "loaded" : "loading"
               }`}
               src={item.firstScreenShot}
               alt="first-ss"
             />
 
-            {!mediaStatus.firstScreenLoaded &&
-              !mediaStatus.firstScreenError && (
+            {!mediaStatus?.firstScreenLoaded &&
+              !mediaStatus?.firstScreenError && (
                 <div className="image-loading-state">
                   <div className="loading-spinner"></div>
                 </div>
               )}
 
-            {mediaStatus.firstScreenError && (
+            {mediaStatus?.firstScreenError && (
               <div className="image-error-state">Imagen no disponible</div>
             )}
           </div>
@@ -32,20 +32,20 @@ export const ScreenShotsMobile = ({ mediaStatus, item }) => {
           <div className="image-wrapper">
             <img
               className={`img-ss ${
-                mediaStatus.secondScreenLoaded ? "loaded" : "loading"
+                mediaStatus?.secondScreenLoaded ? "loaded" : "loading"
               }`}
-              src={item.secondScreenShot}
+              src={item?.secondScreenShot}
               alt="first-ss"
             />
 
-            {!mediaStatus.secondScreenLoaded &&
-              !mediaStatus.secondScreenError && (
+            {!mediaStatus?.secondScreenLoaded &&
+              !mediaStatus?.secondScreenError && (
                 <div className="image-loading-state">
                   <div className="loading-spinner"></div>
                 </div>
               )}
 
-            {mediaStatus.secondScreenError && ( // Cambiado de firstImageError a secondScreenError
+            {mediaStatus?.secondScreenError && ( // Cambiado de firstImageError a secondScreenError
               <div className="image-error-state">Imagen no disponible</div>
             )}
           </div>
