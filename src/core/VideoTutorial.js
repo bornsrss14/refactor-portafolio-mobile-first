@@ -1,9 +1,4 @@
-import { useState } from "react";
-
 export const VideoTutorial = ({ item, mediaStatus }) => {
-  const [setIsLoaded] = useState(false);
-  const [setHasError] = useState(false);
-
   return (
     <div>
       <div className="container-video-tutorial">
@@ -26,8 +21,6 @@ export const VideoTutorial = ({ item, mediaStatus }) => {
               playsInline
               preload="metadata"
               muted
-              onLoadedData={() => setIsLoaded(true)}
-              onError={() => setHasError(true)}
               style={{ opacity: mediaStatus?.videoLoaded ? 1 : 0 }}
             >
               <source src={item?.url_video} type="video/mp4" />

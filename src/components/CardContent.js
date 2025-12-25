@@ -64,13 +64,46 @@ export const CardContent = ({ item }) => {
       {/* decido si isDesktop entonces grid-card-content-desktop */}
       {isMobile && (
         <div className="grid-card-content-desktop">
+          {/* item={item?.objeto ?? item} */}
           {item?.id === 1001 && (
             <div>
               <p>{item?.objeto?.projectTitle ?? item?.projectTitle}</p>
-              <VideoTutorial
-                mediaStatus={mediaStatus}
-                item={item?.objeto ?? item}
-              ></VideoTutorial>
+
+              <div>
+                <div className="container-video-tutorial">
+                  <p className="para-about">{item?.objeto?.briefDescription}</p>
+
+                  {/* video con estado de carga */}
+                  <div className="video-container">
+                    {mediaStatus?.videoError ? (
+                      <div className="media-error">
+                        This video isn't available ¯\_(ツ)_/¯
+                      </div>
+                    ) : (
+                      <video
+                        width="100%"
+                        height="auto"
+                        autoPlay
+                        src={item?.objeto.url_video}
+                        controls
+                        loop
+                        playsInline
+                        preload="metadata"
+                        muted
+                        style={{ opacity: mediaStatus?.videoLoaded ? 1 : 0 }}
+                      >
+                        <source src={item?.objeto.url_video} type="video/mp4" />
+                        Tu navegador no soporta el elemento video.
+                      </video>
+                    )}
+                    {!mediaStatus?.videoLoaded && !mediaStatus.videoError && (
+                      <div className="media-loading">
+                        <div className="loading-spinner"></div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
               <div>
                 <TutorialLinks item={item?.objeto ?? item}></TutorialLinks>
               </div>
