@@ -1,6 +1,6 @@
 import DefaultCard from "../components/DefaultCard";
 
-export const DataProjectsM = [¨
+export const DataProjectsM = [
   [
     {
       tab_one: {
