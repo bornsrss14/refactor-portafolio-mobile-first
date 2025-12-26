@@ -21,14 +21,53 @@ export const CardContent = ({ item }) => {
   //Precargando los medios
   useEffect(() => {
     const loadMedia = async () => {
+      // ✔️ Verifico que mis url existan
       try {
-        //precargarVideo
-        const video = document.createElement("video");
-        video.src = item?.objeto?.url_video ?? item?.url_video;
-        video.onloadeddata = () =>
+        const videoUrl = item?.objeto?.url_video ?? item?.url_video;
+        const firstScreenUrl =
+          item?.objeto?.firstScreenShot ?? item?.firstScreenShot;
+        const secondScreenUrl =
+          item?.objeto?.secondScreenShot ?? item?.secondScreenShot;
+
+        if (!videoUrl || !firstScreenUrl || !secondScreenUrl) {
+          console.log("Missing media urls (╯︵╰,)");
+          setMediaStatus({
+            videoError: !videoUrl,
+            firstScreenError: !firstScreenUrl,
+            secondScreenError: !secondScreenUrl,
+            videoLoaded: !!videoUrl,
+            firstScreenLoaded: !!firstScreenUrl,
+            secondScreenLoaded: !!secondScreenUrl,
+          });
+          return;
+        }
+        if (isMobile) {
           setMediaStatus((prev) => ({ ...prev, videoLoaded: true }));
-        video.onerror = () =>
-          setMediaStatus((prev) => ({ ...prev, videoError: true }));
+        } else {
+          //precargarVideo
+          const video = document.createElement("video");
+          video.src = videoUrl;
+          video.preload = "metadata";
+
+          const videoTimeout = setTimeout(() => {
+            setMediaStatus((prev) => ({ ...prev, videoLoaded: true }));
+          }, 3000); // Timeout de 3 segundos
+
+          /* video.onloadeddata = () =>
+            setMediaStatus((prev) => ({ ...prev, videoLoaded: true }));
+          video.onerror = () =>
+            setMediaStatus((prev) => ({ ...prev, videoError: true })); */
+          video.onloadeddata = () => {
+            clearTimeout(videoTimeout);
+            setMediaStatus((prev) => ({ ...prev, videoLoaded: true }));
+          };
+          video.onerror = () => {
+            clearTimeout(videoTimeout);
+            setMediaStatus((prev) => ({ ...prev, videoError: true }));
+          };
+
+          video.load(); // ES importante: forzar la carga
+        }
 
         //ahora con las imagenes
         const loadScreenShot = (url, key) => {
@@ -60,7 +99,7 @@ export const CardContent = ({ item }) => {
       }
     };
     loadMedia();
-  }, [item]);
+  }, [isMobile, item]);
 
   return (
     <>
