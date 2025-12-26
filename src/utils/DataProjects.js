@@ -1,7 +1,6 @@
 import DefaultCard from "../components/DefaultCard";
-import CardDetailsAbout from "../core/CardDetailsAbout";
 
-export const DataProjectsM = [
+export const DataProjectsM = [¨
   [
     {
       tab_one: {
