@@ -1,11 +1,25 @@
+import { useThemeT } from "../contexts/ThemeContext";
+
 export const TutorialLinks = ({ item }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <div>
       <div className="tutorial-links">
-        <a target="_blank" rel="noreferrer" href={item.liveDemo}>
+        <a
+          style={{ color: theme.txt }}
+          target="_blank"
+          rel="noreferrer"
+          href={item.liveDemo}
+        >
           <span style={{ fontSize: "1rem" }}>🔗</span>Live demo here
         </a>
-        <a target="_blank" rel="noreferrer" href={item.gitRepo}>
+        <a
+          style={{ color: theme.txt }}
+          target="_blank"
+          rel="noreferrer"
+          href={item.gitRepo}
+        >
           {" "}
           <span>
             <img

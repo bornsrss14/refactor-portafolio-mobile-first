@@ -1,4 +1,5 @@
 import DefaultCard from "../components/DefaultCard";
+import CardDetailsAbout from "../core/CardDetailsAbout";
 
 export const DataProjectsM = [
   [
@@ -194,7 +195,17 @@ export const DataProjectsMobile = [
     },
     tab_three: {
       id: 1003,
-      objeto: { componente: <DefaultCard></DefaultCard> },
+      objeto: {
+        techStack:
+          "React • Node.js • MySQL • AWS RDS • REST API • ResponsiveDesign",
+        features: [
+          "Built interactive Pokémon encyclopedia consuming REST API data for 1,000+ entries with real-time stats",
+          "Engineered infinite scroll with lazy loading, reducing initial load time",
+          "Implemented debounced search and multi-criteria filtering (name, type, generation) for enhanced UX",
+          "Created mobile-first responsive design achieving consistent UX across all devices",
+          "Developed custom React hooks for state management, cutting code redundancy",
+        ],
+      },
     },
   },
   {
@@ -222,7 +233,17 @@ export const DataProjectsMobile = [
     },
     tab_three: {
       id: 1003,
-      objeto: { componente: <DefaultCard></DefaultCard> },
+      objeto: {
+        techStack:
+          "React • JavaScript • CSS • React Router • Leaflet Maps • SEO Optimization",
+        features: [
+          "Developed modular landing page showcasing legal services and business information",
+          "Built real-time open/closed status indicator based on business hours and holiday schedules",
+          "Integrated interactive Leaflet map with custom markers, reducing direction inquiries by 45%",
+          "Designed mobile-responsive interfaces and SEO-friendly content sections",
+          "Optimized for SEO and accessibility, achieving 95+ Lighthouse performance scores",
+        ],
+      },
     },
   },
   {
@@ -248,7 +269,17 @@ export const DataProjectsMobile = [
     },
     tab_three: {
       id: 1003,
-      objeto: { componente: <DefaultCard></DefaultCard> },
+      objeto: {
+        techStack:
+          "React • Node.js • MySQL • AWS RDS • REST API • Responsive Design",
+        features: [
+          "search films, curate favorites, write reviews, and engage through comments and reactions.",
+          "Architected RESTful API integration with TMDB database, implementing efficient data fetching",
+          "Developed responsive, mobile-first UI components using React and modern CSS",
+          "Designed and deployed MySQL database schema on AWS RDS with normalized tables for users",
+          "Implemented lazy loading and image compression strategies for heavy media assets, significantly enhancing application performance and user experience",
+        ],
+      },
     },
   },
   {
@@ -276,7 +307,10 @@ export const DataProjectsMobile = [
     },
     tab_three: {
       id: 1003,
-      objeto: { componente: <DefaultCard></DefaultCard> },
+      objeto: {
+        techStack: "",
+        features: [],
+      },
     },
   },
   {
@@ -302,7 +336,10 @@ export const DataProjectsMobile = [
     },
     tab_three: {
       id: 1003,
-      objeto: { componente: <DefaultCard></DefaultCard> },
+      objeto: {
+        techStack: "",
+        features: [],
+      },
     },
   },
   {
@@ -329,7 +366,15 @@ export const DataProjectsMobile = [
     },
     tab_three: {
       id: 1003,
-      objeto: { componente: <DefaultCard></DefaultCard> },
+      objeto: {
+        techStack: " React • TailwindCSS • LocalStorage • State Management",
+        features: [
+          "Built CRUD to-do application with task completion tracking and priority management",
+          "Implemented LocalStorage persistence for seamless data retention across browser sessions",
+          "Developed React component architecture with custom hooks for state management",
+          "Filter: All tasks, Active, Completed",
+        ],
+      },
     },
   },
 ];

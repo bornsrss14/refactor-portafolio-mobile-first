@@ -1,8 +1,12 @@
+import { useThemeT } from "../contexts/ThemeContext";
+
 export const ScreenShotsMobile = ({ mediaStatus, item }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <div>
       <div>
-        <p>Enfoque mobile-first</p>
+        <p style={{ color: theme.txt }}>Enfoque mobile-first</p>
         <div className="div-ss-tutorial">
           {/* Imágenes con estado de carga */}
 
@@ -51,7 +55,7 @@ export const ScreenShotsMobile = ({ mediaStatus, item }) => {
           </div>
         </div>
       </div>
-      <p style={{ marginBottom: ".5rem" }}>
+      <p style={{ marginBottom: ".5rem", color: theme.txt, fontWeight: "300" }}>
         Providing a seamless experience across mobile devices and smaller
         screen.
       </p>

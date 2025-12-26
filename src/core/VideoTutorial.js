@@ -1,8 +1,17 @@
+import { useThemeT } from "../contexts/ThemeContext";
+
 export const VideoTutorial = ({ item, mediaStatus }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   return (
     <div>
       <div className="container-video-tutorial">
-        <p className="para-about">{item?.briefDescription}</p>
+        <p
+          style={{ color: theme.txt, fontWeight: "400" }}
+          className="para-about"
+        >
+          {item?.briefDescription}
+        </p>
 
         {/* video con estado de carga */}
         <div className="video-container">

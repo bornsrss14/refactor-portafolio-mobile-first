@@ -2,8 +2,10 @@ import { createContext, useContext, useState, useMemo, useEffect } from "react";
 
 export const ThemeContext = createContext();
 const dark = {
+  txt_form: "rgba(255, 255, 255, 1)",
+  bg_form: "rgba(3, 3, 39, 1)",
   txt: "var(--primary-white)",
-  txt_logo: "white",
+  txt_logo: "rgba(255, 255, 255, 1)",
   border: "rgba(103, 98, 98, 0.83)",
   ui: "var(--raisin-black-light)",
   uiEduExp: "var(--night-bg)",
@@ -19,6 +21,8 @@ const dark = {
   txtSkillBlue: "white",
 };
 const light = {
+  txt_form: "black",
+  bg_form: "white",
   txt: "var(--night-bg)",
   txt_logo: "var(--c-primary-blue)",
   border: "rgba(92, 88, 88, 1)",

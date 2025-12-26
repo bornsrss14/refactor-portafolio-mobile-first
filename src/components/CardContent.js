@@ -3,8 +3,12 @@ import VideoTutorial from "../core/VideoTutorial.js";
 import TutorialLinks from "../core/TutorialLinks.js";
 import ScreenShotsMobile from "../core/ScreenShotsMobile.js";
 import { useBreakpoint } from "../hooks/useBreakpoint.js";
+import CardDetailsAbout from "../core/CardDetailsAbout.js";
+import { useThemeT } from "../contexts/ThemeContext.js";
 
 export const CardContent = ({ item }) => {
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
   const [mediaStatus, setMediaStatus] = useState({
     videoLoaded: false,
     firstScreenLoaded: false,
@@ -67,11 +71,18 @@ export const CardContent = ({ item }) => {
           {/* item={item?.objeto ?? item} */}
           {item?.id === 1001 && (
             <div>
-              <p>{item?.objeto?.projectTitle ?? item?.projectTitle}</p>
+              <p style={{ color: theme.txt, fontWeight: "bold" }}>
+                {item?.objeto?.projectTitle ?? item?.projectTitle}
+              </p>
 
               <div>
                 <div className="container-video-tutorial">
-                  <p className="para-about">{item?.objeto?.briefDescription}</p>
+                  <p
+                    style={{ color: theme.txt, fontWeight: "400" }}
+                    className="para-about"
+                  >
+                    {item?.objeto?.briefDescription}
+                  </p>
 
                   {/* video con estado de carga */}
                   <div className="video-container">
@@ -117,7 +128,9 @@ export const CardContent = ({ item }) => {
               ></ScreenShotsMobile>
             </div>
           )}
-          {item?.id === 1003 && <p>(°ロ°) !</p>}
+          {item?.id === 1003 && (
+            <CardDetailsAbout item={item?.objeto ?? item}></CardDetailsAbout>
+          )}
         </div>
       )}
       {isDesktop && (

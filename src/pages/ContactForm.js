@@ -1,9 +1,12 @@
 import { useForm, ValidationError } from "@formspree/react";
 import Footer from "../components/Footer";
 import LogoScalable from "../core/LogoScalable";
+import { useThemeT } from "../contexts/ThemeContext";
 
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm("manbkqel");
+  const { isDark, dark, light } = useThemeT();
+  const theme = isDark ? dark : light;
 
   return (
     <>
@@ -15,7 +18,10 @@ export const ContactForm = () => {
             src="https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fpaper-clip-removebg-preview.png?alt=media&token=4d0787a5-affd-49f9-a96d-31e5bbb7cce5"
           ></img>
         </div>
-        <section className="itemForm leftForm">
+        <section
+          style={{ color: theme.txt, background: theme.folderFront }}
+          className="itemForm "
+        >
           <div className="flex-top-form">
             <div className="flex-row">
               <LogoScalable
@@ -51,7 +57,10 @@ export const ContactForm = () => {
           </div>
         </section>
 
-        <section className="itemForm rightForm">
+        <section
+          style={{ background: theme.bg_form, color: theme.txt_form }}
+          className="itemForm "
+        >
           {state.succeeded ? (
             <p>Thanks for joining!</p>
           ) : (
@@ -60,16 +69,14 @@ export const ContactForm = () => {
                 <h2 id="contact-title" className="font-sub-titles">
                   Don't hesitate to reach out! ⌨️
                 </h2>
-                <p>
+                <p style={{ color: theme.txt_form }}>
                   Drop me a message - I’ll reply as soon as I can. Can’t wait to
                   hear from you!
                 </p>
                 <form className="form-style-main" onSubmit={handleSubmit}>
                   <div className="div-inputs-form">
                     <div className="div-label-input">
-                      <label className="" htmlFor="name">
-                        Name
-                      </label>
+                      <label htmlFor="name">Name</label>
                       <input
                         type="text"
                         required
