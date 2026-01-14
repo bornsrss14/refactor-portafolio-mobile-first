@@ -65,7 +65,8 @@ export const DataProjectsM = [
           projectTitle: "MUBI:: Rate movies and share reviews",
           briefDescription:
             "My latest project: A social network web app to review movies and series, create watch list, save favorites and interact with other users in comment sections in each review. It's not full coded, please, stay tune!",
-          url_video: null,
+          url_video:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fvideos%2F_video_dos.mp4?alt=media&token=bdef8375-95fb-4bdd-95f0-ff409f64b275",
         },
       },
       tab_two: {
