@@ -253,7 +253,8 @@ export const DataProjectsMobile = [
         projectTitle: "MUBI:: Rate movies and share reviews",
         briefDescription:
           "My latest project: A social network web app to review movies and series, create watch list, save favorites and interact with other users in comment sections in each review. It's not full coded, please, stay tune!",
-        url_video: null,
+        url_video:
+          "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fvideos%2F_video_dos.mp4?alt=media&token=bdef8375-95fb-4bdd-95f0-ff409f64b275",
         gitRepo: "https://github.com/bornsrss14/mubi_pandas",
         liveDemo: "https://mubipandas.rosfuentes.dev/",
       },
@@ -419,7 +420,8 @@ const DataProjects = [
         sections in each review. It's not full coded, please, stay tune!
       </p>
     ),
-    url_video: null,
+    url_video:
+      "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fvideos%2F_video_dos.mp4?alt=media&token=bdef8375-95fb-4bdd-95f0-ff409f64b275",
     firstScreenShot:
       "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2FCaptura%20de%20pantalla%202025-10-30%20-%2002.20.17.png?alt=media&token=36c1a189-5c94-42b4-b886-d40e0b07d815",
     secondScreenShot:
