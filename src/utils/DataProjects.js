@@ -409,7 +409,7 @@ const DataProjects = [
     gitRepo: "https://github.com/bornsrss14/notaria-nueve",
     liveDemo: "https://notariacordoba.netlify.app/servicios/nuestros-servicios",
   },
-  {¨
+  {
     id: 1001,
     projectTitle: "MUBI:: Rate movies and share reviews",
     briefDescription: (
