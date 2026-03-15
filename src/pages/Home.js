@@ -31,7 +31,7 @@ export const Home = () => {
     {
       id: "cv",
       linkMedia:
-        "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/CV%2F_CV_ROSARIO_FUENTES_GARCIA_ESP.pdf?alt=media&token=beb76c3e-6a37-442c-995f-5dbb12cd395c",
+        "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/CV%2F_CV_ROSARIO_FUENTES_GARCIA_ESP_2026.pdf?alt=media&token=1d446cd9-0c27-4eb1-91e2-73e260c16743",
       label: "Download CV",
     },
   ];
