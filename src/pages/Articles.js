@@ -38,17 +38,20 @@ export const Articles = () => {
         </div>
       </section>
       <div className={view === "grid" ? "view-grid" : ""}>
-        {articles.map((item) => {
-          return (
-            <Link to={`/detalle-articulo/${item.id}`} key={item.id}>
-              {view === "list" ? (
-                <ArticleItemList item={item} />
-              ) : (
-                <ArticleItemGrid item={item} />
-              )}
-            </Link>
-          );
-        })}
+        {articles
+          .slice()
+          .reverse()
+          .map((item) => {
+            return (
+              <Link to={`/detalle-articulo/${item.id}`} key={item.id}>
+                {view === "list" ? (
+                  <ArticleItemList item={item} />
+                ) : (
+                  <ArticleItemGrid item={item} />
+                )}
+              </Link>
+            );
+          })}
       </div>
       <SecondFooter></SecondFooter>
     </div>

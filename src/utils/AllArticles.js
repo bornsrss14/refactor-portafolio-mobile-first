@@ -571,4 +571,159 @@ export const allMainArticles = [
       },
     ],
   },
+  {
+    id: 103,
+    title:
+      "If There Aren't Any Typos In This Essay, it has been Launched Too Late!  ",
+    subtitle:
+      "The way for securely transmitting information between parties as a JSON object. ",
+    dateMonth: "APR",
+    dateNumber: 13,
+    minutesRead: 19,
+    categories: ["Web Development", "Node.js", "Security"],
+    banner: "https://i.ytimg.com/vi/P2CPd9ynFLg/maxresdefault.jpg",
+    articleImg: "https://i.ytimg.com/vi/P2CPd9ynFLg/maxresdefault.jpg",
+    balazoArticleImg:
+      "The truth about Json Web tokens its function in security",
+    content:
+      "i'm super excited about deepening my understanding of JWT, access tokens, refresh tokens, payloads, signatures, and middleware used to verify tokens issued by custom functions. This idea that has been on my mind for the past few weeks, and now it's finally coming to life. I hope to keep writing on my blog more consistently, yes. i'm back ",
+
+    paragrapsArticle: [
+      {
+        subtitleParagraph: "What about JSON Web Tokens?",
+        paragraph:
+          "When we talk about JWT, we need to identify what kind of problem solve them, and, as our first look, is necessary to tackle two main concepts (and differentiate both). The First , it’s Authentication: Imagine! When you log in your bank account. The server check if the user and the password match. And in regard whether user exists, and the password you introduced exists —yet,in the database. The user (you) will be authenticated. And That’s all! You are into. At this point you’re authenticated. And this is where the second concept gets into play. The Authorization; that It’s basically the process of verify your permissions, to access some resources or services you are trying to reach out. For example: Does the user has permission to modify its address, or someone else’s address? ",
+        lista: [],
+
+        codeSnippet: {},
+        code: "",
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The authorization part, is where I decided to use JWT. These are usually provided in the authorization header, as a Bearer token. In this brief article, I got deep into the anatomy of the json web tokens. What’s an access token? For What is the payload made up? ",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The first part is composed for my Login Form and my register form. The stack I’m using here is React App in my frontend, no fancy tools, just pure CSS styles sheets. The otherwise the framework with express.js and axios instances to communicate with my data base, which is hosted into a AWS RDS MySQL.  If you are interested in the cool stuff inside these forms made thinking in user experience and screen reader, I invite you to read my latest article dedicated to UX.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "My Implementation",
+        paragraph:
+          "Previously I set up the endpoints. And list in this part. It’s important to point out the logic are separated in a kind of MVC model. Routes files to set up the endpoints. .",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph:
+          "Here’s the simplified version of my implementation:",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {¨
+          codeBreakdown: [],
+          codeTitleImg: "Importaciones y estado inicial",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2F_cambio_main.png?alt=media&token=e03a129e-5f42-42c8-b9ff-507d9df0e12e",
+          balazo: undefined,
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Now any component in my app can access the current theme and toggle it easily:",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: "---",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Fconsume-context.png?alt=media&token=9e360292-d923-450a-ae22-64a55cf25985",
+          balazo: undefined,
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Debugging: When theme Was Undefined",
+        paragraph: "At one point, I ran into this error:",
+        lista: [
+          {
+            subList: ["Can't access property 'bg', theme is undefined"],
+          },
+        ],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph:
+          "After debugging, I realized that I was passing the value incorrectly to the provider:",
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: "---",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Ferror.png?alt=media&token=6c3e85ca-22cc-424d-bf54-eadcc48d5af4",
+          balazo: undefined,
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph:
+          "This wrapped the object inside another object. The fix was simple:",
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: " ",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Fcompuesto.png?alt=media&token=c0e1a87f-bebe-465c-9603-9b98be49f95c",
+          balazo:
+            "A tiny syntax mistake — but a perfect reminder that the way we structure context values matters a lot.",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Lessons Learned",
+        paragraph:
+          "This small implementation taught me that Context is more than a simple global store — it’s a pattern that encourages clean architecture and clear separation of responsibilities.It also reminded me of the importance of understanding how React re-renders and how useMemo helps to optimize unnecessary updates.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Final Thoughts",
+        paragraph:
+          "Migrating my theme logic to React Context not only made my code more scalable but also more enjoyable to maintain. It’s one of those improvements that seems small at first but makes a huge difference when your app grows.If you’re still passing props manually to handle global state — give Context a try. It’s worth it.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+    ],
+  },
 ];

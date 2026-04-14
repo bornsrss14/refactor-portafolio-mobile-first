@@ -66,11 +66,11 @@ export function useOptimizedImage(src, options = {}) {
             observerRef.current.disconnect();
           }
         },
-        { threshold, rootMargin }
+        { threshold, rootMargin },
       );
       observerRef.current.observe(node); // 🔹 importante
     },
-    [loadImage, threshold, rootMargin]
+    [loadImage, threshold, rootMargin],
   );
 
   //Al desmontar ocurre:

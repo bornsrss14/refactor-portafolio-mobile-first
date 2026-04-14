@@ -611,7 +611,9 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 350; /* peso ligero */
   font-size: 17px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 body.dark-theme {
   background-color: var(--night-bg);
@@ -1238,7 +1240,9 @@ input[type="email"] {
   font-size: 1rem;
   font-family: inherit; /* usa la misma fuente del body */
   outline: none; /* quita el borde azul por defecto */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 input[type="text"]:hover {
   border-color: #888;
@@ -2064,6 +2068,8 @@ desktop
   position: relative;
   overflow: hidden;
   display: inline-block;
+  width: 100%;
+  max-height: 16rem;
 }
 
 .optimized-image__img {
