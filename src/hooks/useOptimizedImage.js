@@ -131,3 +131,49 @@ export function OptimizedImage({
     </div>
   );
 }
+
+export function OptimizedImageCodeSnippet({
+  src,
+  placeholder,
+  alt = "",
+  className = "",
+  skeletonClassName = "",
+  errorFallback = "Error al cargar imagen",
+}) {
+  const {
+    ref,
+    src: imageSrc,
+    isLoading,
+    hasError,
+  } = useOptimizedImage(src, {
+    placeholder,
+    rootMargin: "200px",
+  });
+
+  if (hasError) {
+    return (
+      <div
+        aria-label={alt || errorFallback}
+        role="img"
+        className={`optimized-image-heigh error ${className}`}
+      >
+        <span className="optimized-image__error-text">{errorFallback}</span>
+      </div>
+    );
+  }
+  return (
+    <div ref={ref} className={`optimized-image ${className}`}>
+      <img
+        src={imageSrc}
+        alt={alt}
+        className={`optimized-image__img ${isLoading ? "loading" : "loaded"}`}
+        loading="lazy"
+        decoding="async"
+      />
+
+      {isLoading && (
+        <div className={`optimized-image__skeleton ${skeletonClassName}`}></div>
+      )}
+    </div>
+  );
+}

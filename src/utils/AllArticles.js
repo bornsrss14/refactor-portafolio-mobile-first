@@ -629,7 +629,8 @@ export const allMainArticles = [
       {
         subtitleParagraph:
           "Here’s the simplified version of my implementation:",
-        paragraph: "",
+        paragraph:
+          "This is the result of my Server.js file. I use an instance of express const app = express() and their app.use() method. With their corresponding route prefixes",
         lista: [],
         codeSnippet: {},
         code: undefined,
@@ -638,88 +639,526 @@ export const allMainArticles = [
         subtitleParagraph: undefined,
         paragraph: undefined,
         lista: [],
-        codeSnippet: {¨
+        codeSnippet: {
           codeBreakdown: [],
-          codeTitleImg: "Importaciones y estado inicial",
+          codeTitleImg: "",
           codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2F_cambio_main.png?alt=media&token=e03a129e-5f42-42c8-b9ff-507d9df0e12e",
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_comp_server.png?alt=media&token=88d92234-4c42-4868-8e04-ca135c4c4581",
           balazo: undefined,
         },
         code: undefined,
       },
       {
         subtitleParagraph: "",
-        paragraph:
-          "Now any component in my app can access the current theme and toggle it easily:",
+        paragraph: "",
         lista: [],
-        codeSnippet: {},
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2Ferror_handling.png?alt=media&token=93bc7a25-cfe7-427d-886f-992dcb5a85c3",
+        },
         code: undefined,
       },
       {
-        subtitleParagraph: undefined,
-        paragraph: undefined,
+        subtitleParagraph: "Self note:",
+        paragraph: `authRoutes imported as import authRoutes from "./routes/authRoutes.js"; ← My Express router. It contains the specific routs for POST / login, POST/Registe.`,
         lista: [],
         codeSnippet: {
           codeBreakdown: [],
-          codeTitleImg: "---",
-          codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Fconsume-context.png?alt=media&token=9e360292-d923-450a-ae22-64a55cf25985",
+          codeTitleImg: "",
+          codePreview: "",
           balazo: undefined,
         },
         code: undefined,
       },
       {
-        subtitleParagraph: "Debugging: When theme Was Undefined",
-        paragraph: "At one point, I ran into this error:",
+        subtitleParagraph: "Here you are my complete Router",
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2Fcomplete-router-1.png?alt=media&token=dca16e23-f958-4566-be1c-da01e4bb9656",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Note to self:",
+        paragraph:
+          "HTTP request 🡪 app.use() 🡪  does my route start with “/api/users/auth”  🡪 authRoutes (takes the sub-route) 🡪 the controller is executed.",
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: "",
+          codePreview: undefined,
+          balazo: undefined,
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: undefined,
+        paragraph:
+          "Same with user end points where I can add a new user, delete by username, update by id and so on and so forth",
+        lista: [],
+        codeSnippet: {
+          codeBreakdown: [],
+          codeTitleImg: " ",
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_user_routes_1.png?alt=media&token=e7b87474-6e90-4af5-b3ce-78f9704cc016",
+          balazo: "Here you are my user router.",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "KEY CONCEPT BOUT JWT",
+        paragraph:
+          "A key concept to understand is the anatomy of a JWT. A token is made up of three distinct parts, separated by dots; a Header, a Payload, and a signature — each Base64Url-encoded and joined by a period ( . ), resulting the following structure: HEADER.PAYLOAD.SIGNATURE.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The first part, the HEADER, contains metadata about the token itself — such as the token type and the hashing algorithm used to generate the signature. ",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The second part is the Payload, which carries the actual data of the token. There are some recommended standard fields — known as claims — such as user information, expiration time, and issue date. However it’s important to avoid including sensitive information like passwords. In my case,  I only included  username, exp (expiration time), and iat (issued at). You could also add fields like roles or emails. But for the purpose of the practice, I kept simple.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: `{
+“iss”: “oauth”,
+“sub”: “username”,
+“exp”: 112434,
+“iat”: 123413,
+}
+`,
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The last part is the Signature. When a JWT has been issued to the user - me- the authenticating server signs the token. And it’s basically the way to ensure the token can be reliable.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The way the signature works: the server needs a very, very, VERY secret value . In my case i generated a new random one with Node. It wasn’t necessary to install anything else. Just went to the console and typed node  — to go into Node and run the command line interface. Node has a built-in core module called crypto. Just type: ",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "require(‘cryptp’).randomBytes(64).toString(‘hex’);",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F-as-crypto.png?alt=media&token=d832cd21-2768-4511-b656-c3bdec08f809",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "And, we can use this string as our access token secret value, and another one for our refresh token secret value. Skip the quotes inside the string copy and paste it into the .env file.",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_acces_token_new.png?alt=media&token=6e0cc1f2-58b6-44c9-8d49-b7b7d0e7aac4",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Then. It will take the header and the payload and running through a hashing function to output a signature.  So far, token is done. But… how does the authorization work? How do I verify the signature of a token?",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Then, I’ll take the Header and the Payload and run it through a hashing function to output a signature. So far, the token is done. But… how does authorization work? How do I verify the signature of the token?",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "The process is: you send a request, and the server takes the Header and the Payload of the token, and produces a signature to compare vs the one the user —me— has provided.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph:
+          "If both signatures match, that means the token hasn’t been altered. Otherwise, the authorization fails.",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "Note to self:",
+        paragraph:
+          " Go to jwt.io and paste the token. Another important concept is that tokens are not encrypted — they are base64-encoded, which means their content can be decoded and accessed by anyone. All the claims are available, which is why it’s important not to store sensitive information.  ",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_token_encoded.png?alt=media&token=de619e71-2f12-4836-9bf1-584c84032fe1",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Next, I’ll show you the setup of my token. I’ve decided to issue it through the authByNicknameAndPwd() function.",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_uno.png?alt=media&token=14b5ec77-275a-4e25-809a-e8c52d97352e",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_dos.png?alt=media&token=3f1a38d0-e713-4bac-94f3-c431d2647516",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: undefined,
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_tre.png?alt=media&token=2191fabf-7420-4f7c-9f6c-14a893cb6e06",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "I’ve decided to store the refresh token in a cookie. While we know it’s not 100% XSS-proof, usign the httpOnly flag makes it inaccessible to JavaScript code —So, it’s still considerate a good practice. Here, I focused on setting my refresh token with a medium expiration time, and my access token with a short one — 15 minutes.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "A look at my handleRefreshToken( ) function. This function will help me generate a new access token once the previous one has expired, by retrieving the refresh token.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FhandleRefreshToken-img.png?alt=media&token=12740a62-c997-4508-9ff3-2d2f2e07743d",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "With my authController complete. Let’s take a a deeper look at my middleware to verify the token.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2Fverify_jwt.png?alt=media&token=a1f73725-01d0-43c4-b2d9-2e036ca01b11",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "Self note about the code does: ",
+        paragraph:
+          "Reads the Authorization header 🡪 extracts the  token 🡪 verify the accessToken 🡪 if valid→ authorizes and lets the request through 🡪 if not → throws an status 401 / 403  forbidden  error.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "As a practice, I decided to test that the authorization flow  worked  as planned . So in  Postman. I tested the login and generated my token. The server response is received as JSON  — below we can see it returns the access token and a success message. ",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F-post-man-does.png?alt=media&token=6dfa832d-c9c9-4e8f-a4d8-f5c455cdcd84",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "As parameters to fetch the main data of my user, I took the username and the access  token issued  at login.  I set the access token in the auth section of Postman as Bearer token.  As a result , by passing a legitimate token , the find-username route allows me  to retrieve the main data — such a username, email, profile_pic_username , given name etc.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F-second-postman.png?alt=media&token=207861ae-0389-43f5-a8a5-077c0c4942a4",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Once my access token expired, I was no longer able to access the userdata . Indeed , it worked as  expected, my server responded with a 403 Forbidden status.",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2Ftoken_expired.png?alt=media&token=fb506c37-d9e5-43b9-99eb-3d44a3ff42e3",
+          balazo:
+            "For practical purposes, I set 1 minute for the token expiration. ",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_minutes-token.png?alt=media&token=1c245013-6e0e-401e-8630-5ab22b4a137b",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "And it works in every single route I’ve decided to protect, adding the header of the token in my request. verifyJWT",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "On the front-end side, in my service layer, the findUser function takes the username and the access token as arguments, and sends POST request to the /users/find-username route, attaching the access token in the Authorization headers as a Bearer token.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FfindUser.png?alt=media&token=ccda9c2e-5657-470b-8411-5b7c3fabc582",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: `
+Before introducing you to the concept of interceptor with Axios instances, I’d like to point out a problem I faced —and it was crucial to my deeper understanding of the process of issuing a new access token with the refresh token. In my backend-end i have a function called handleRefreshToken (), but this function doesn’t trigger on it’s own —it must wait for a trigger to issue a new access token. This is a responsibility my client must handle, and this is exactly where interceptors come into play. Where should I handle it? With an Axios interceptor. The key concept here is this happen automatically, without the user noticing.
+`,
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "I set up my axios instance with a common baseURL, after i updated some path routes in my endpoints, to ensure the requests are handled correctly and avoid, and avoid unnecessary axios instances.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_axios_setup.png?alt=media&token=44d5c642-1153-4e0b-952f-5335eb2a4ac8",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph:
+          "Since my access token will be in a global context, I decided to create a custom hook in order to allow sharing my token state and its setter function — so my front-end services can access both, the state and the setter.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph:
+          "Since my authService , where its methods  are defined , is a plain object. I cannot call my custom hook directly to use these props. In another scenario I could do it with  const {acessToken, setAccessToke} = useAuthUser(); , but in this case i can only pass them from my async function — Y así yo puedo hacer uso de setAccessToken",
+        paragraph: "and that’s how it all works.",
+        lista: [],
+        codeSnippet: {},
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FloginUserFun.png?alt=media&token=40b85110-9b0e-4103-b059-22498485c0cf",
+          balazo: "In line 78. I can make use of setAccessToken ();",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FauthService.png?alt=media&token=4d300e0e-8825-4ba7-a2e2-ab8a7ea2d5d9",
+          balazo:
+            "For the refresh access token case, I’ll use it directly from my custom hook useAxiosInterceptor( );",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FuseAxiosInteceptors.png?alt=media&token=4cc2ef67-9225-4e8d-ae72-a180c362c04c",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FuseAxiosInteceptors_2.png?alt=media&token=4589f08b-b161-437b-ab45-35a6625c59f4",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2FuseAxiosInteceptors_3.png?alt=media&token=d3a81111-96ec-444f-98a3-7044669fcf41",
+          balazo:
+            "It’s important to ensure I pass the setter function from my access token.",
+        },
+        code: undefined,
+      },
+      {
+        subtitleParagraph: "",
+        paragraph: "",
+        lista: [],
+        codeSnippet: {
+          codePreview:
+            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2F_articulo_jwt%2F_refreshToken_final.png?alt=media&token=84f5ebf5-80dd-4c48-8a61-d62eee686c09",
+        },
+        code: undefined,
+      },
+
+      {
+        subtitleParagraph: "",
+        paragraph: `
+Whit this my request no longer work the same way. The intention of my interceptors  — both request and response —is to intercept HTTP request without repeating the same logic on every single call. With this approach, I avoid manually setting:
+`,
         lista: [
           {
-            subList: ["Can't access property 'bg', theme is undefined"],
+            txt_item: "config.headers.Authorization = Bearer ${accessToken}",
+            subList: [],
+          },
+          {
+            txt_item:
+              "Without my interceptors function. I’d have to do something like this code, in every single request:",
+            subList: ["const token = getToken();"],
           },
         ],
         codeSnippet: {},
         code: undefined,
       },
       {
-        subtitleParagraph: undefined,
-        paragraph:
-          "After debugging, I realized that I was passing the value incorrectly to the provider:",
-        lista: [],
-        codeSnippet: {
-          codeBreakdown: [],
-          codeTitleImg: "---",
-          codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Ferror.png?alt=media&token=6c3e85ca-22cc-424d-bf54-eadcc48d5af4",
-          balazo: undefined,
-        },
-        code: undefined,
-      },
-      {
-        subtitleParagraph: undefined,
-        paragraph:
-          "This wrapped the object inside another object. The fix was simple:",
-        lista: [],
-        codeSnippet: {
-          codeBreakdown: [],
-          codeTitleImg: " ",
-          codePreview:
-            "https://firebasestorage.googleapis.com/v0/b/bornsrss-8ab5d.appspot.com/o/portfolio%2Fscreens%2Farticulo_context%2Fcompuesto.png?alt=media&token=c0e1a87f-bebe-465c-9603-9b98be49f95c",
-          balazo:
-            "A tiny syntax mistake — but a perfect reminder that the way we structure context values matters a lot.",
-        },
-        code: undefined,
-      },
-      {
-        subtitleParagraph: "Lessons Learned",
-        paragraph:
-          "This small implementation taught me that Context is more than a simple global store — it’s a pattern that encourages clean architecture and clear separation of responsibilities.It also reminded me of the importance of understanding how React re-renders and how useMemo helps to optimize unnecessary updates.",
+        subtitleParagraph: "",
+        paragraph: `await api.get("/route", {
+headers: {
+Authorization:Bearer ${"token"},
+},
+});
+
+
+        `,
         lista: [],
         codeSnippet: {},
         code: undefined,
       },
       {
-        subtitleParagraph: "Final Thoughts",
+        subtitleParagraph: "",
         paragraph:
-          "Migrating my theme logic to React Context not only made my code more scalable but also more enjoyable to maintain. It’s one of those improvements that seems small at first but makes a huge difference when your app grows.If you’re still passing props manually to handle global state — give Context a try. It’s worth it.",
+          "This is my general summary of the authorization process that I decided to implement in my web app mubi::pandasneezing. While this is not a “How to implement access tokens: the ultimate guide” type article — it’s a summary of what I consider essential when implementing JWT with this stack. There may be improvements, Which I’ll be sharing in the coming days.However, that’s why the first version was important to me, as a key milestone to write this kind of article, written by me to myself. And anyone whos reading.",
         lista: [],
         codeSnippet: {},
         code: undefined,

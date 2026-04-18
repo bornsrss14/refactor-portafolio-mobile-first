@@ -1,4 +1,7 @@
-import { OptimizedImage } from "../hooks/useOptimizedImage";
+import {
+  OptimizedImage,
+  OptimizedImageCodeSnippet,
+} from "../hooks/useOptimizedImage";
 import SecondFooter from "./SecondFooter";
 
 export const DetailedObjectArticle = ({ objectItem }) => {
@@ -58,7 +61,7 @@ export const DetailedObjectArticle = ({ objectItem }) => {
                     ? section.codeSnippet.codeBreakdown.map(
                         (itemBreakdown, key) => (
                           <p key={key}>{`• ${itemBreakdown}`}</p>
-                        )
+                        ),
                       )
                     : ""}
                 </div>
@@ -73,13 +76,13 @@ export const DetailedObjectArticle = ({ objectItem }) => {
                         className="img-full-cover"
                         alt="img-code-preview"
                       /> */}
-                      <OptimizedImage
+                      <OptimizedImageCodeSnippet
                         placeholder="/lowQuality.jpeg"
                         className="rounded shadow"
                         skeletonClassName="rounded"
                         alt="Imagen del artículo"
                         src={section.codeSnippet.codePreview}
-                      ></OptimizedImage>
+                      ></OptimizedImageCodeSnippet>
                       <p>{section.codeSnippet.balazo}</p>
                     </div>
                   )}

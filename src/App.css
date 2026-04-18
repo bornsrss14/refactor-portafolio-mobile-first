@@ -2071,6 +2071,12 @@ desktop
   width: 100%;
   max-height: 16rem;
 }
+.optimized-image-heigh {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
 
 .optimized-image__img {
   width: 100%;
