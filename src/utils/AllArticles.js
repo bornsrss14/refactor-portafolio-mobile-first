@@ -1129,7 +1129,7 @@ Whit this my request no longer work the same way. The intention of my intercepto
 `,
         lista: [
           {
-            txt_item: "config.headers.Authorization = Bearer ${accessToken}",
+            txt_item: "config.headers.Authorization = Bearer $accessToken",
             subList: [],
           },
           {
