@@ -162,7 +162,7 @@ export function OptimizedImageCodeSnippet({
     );
   }
   return (
-    <div ref={ref} className={`optimized-image ${className}`}>
+    <div ref={ref} className={`optimized-image-heigh ${className}`}>
       <img
         src={imageSrc}
         alt={alt}

@@ -1156,9 +1156,9 @@ Authorization:Bearer ${"token"},
         code: undefined,
       },
       {
-        subtitleParagraph: "",
-        paragraph:
-          "This is my general summary of the authorization process that I decided to implement in my web app mubi::pandasneezing. While this is not a “How to implement access tokens: the ultimate guide” type article — it’s a summary of what I consider essential when implementing JWT with this stack. There may be improvements, Which I’ll be sharing in the coming days.However, that’s why the first version was important to me, as a key milestone to write this kind of article, written by me to myself. And anyone whos reading.",
+        subtitleParagraph:
+          "This is my general summary of the authorization process that I decided to implement in my web app mubi::pandasneezing. While this is not a “How to implement access tokens: the ultimate guide” type article — it’s a summary of what I consider essential when implementing JWT with this stack. There may be improvements, Which I’ll be sharing in the coming days.However, that’s why the first version was important to me, as a key milestone to write this kind of article, written by me to myself. And anyone whos reading",
+        paragraph: "",
         lista: [],
         codeSnippet: {},
         code: undefined,
