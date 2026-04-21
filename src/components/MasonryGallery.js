@@ -14,6 +14,7 @@ export const MasonryGallery = () => {
     "https://i.pinimg.com/1200x/46/e9/5b/46e95b74a41f50a0a9524ea2874a115f.jpg",
     "https://media.foodandtravel.mx/wp-content/uploads/2017/02/barriochino-1.jpg",
     "https://i.pinimg.com/736x/58/10/2e/58102e9825b361d8bff93b615851f718.jpg",
+    "https://i.pinimg.com/736x/1c/ab/cc/1cabccd6d65e9bff51b14e78b188f11b.jpg",
   ];
   useEffect(() => {
     if (gridRef.current) {
@@ -31,7 +32,7 @@ export const MasonryGallery = () => {
   return (
     <div ref={gridRef} className="masonry-grid">
       <div className="masonry-sizer"></div>
-      {galleryImages.map((src, i) => {
+      {[...galleryImages].reverse().map((src, i) => {
         return (
           <div key={i} className="masonry-item">
             <img src={src} alt={`img-${i}`} />

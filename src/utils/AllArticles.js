@@ -798,15 +798,6 @@ export const allMainArticles = [
       {
         subtitleParagraph: "",
         paragraph:
-          "Then, I’ll take the Header and the Payload and run it through a hashing function to output a signature. So far, the token is done. But… how does authorization work? How do I verify the signature of the token?",
-        lista: [],
-        codeSnippet: {},
-        code: undefined,
-      },
-
-      {
-        subtitleParagraph: "",
-        paragraph:
           "The process is: you send a request, and the server takes the Header and the Payload of the token, and produces a signature to compare vs the one the user —me— has provided.",
         lista: [],
         codeSnippet: {},
